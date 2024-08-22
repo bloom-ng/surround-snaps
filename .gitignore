@@ -17,3 +17,47 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+
+# /////
+/node_modules
+/npm-debug.log
+
+# Laravel specific files and directories
+/vendor
+/.env
+/.env.backup
+/.env.local
+/.env.*.local
+/storage/*.key
+/public/hot
+/public/storage
+/public/uploads
+/public/build
+/storage/debugbar
+/storage/app/public
+/storage/framework/cache/data
+/storage/logs
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Composer dependencies
+/vendor
+
+# Laravel generated files
+/bootstrap/cache/
+.env.*
+Homestead.yaml
+Homestead.json
+
+# Ignore cache, compiled files, and logs
+/.phpunit.result.cache
+.phpunit.result.cache
+.phpstorm.meta.php
+.phpunit.result.cache
+/cache/
+*.log
