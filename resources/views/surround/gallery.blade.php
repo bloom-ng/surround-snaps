@@ -94,15 +94,15 @@
                     </div>
 
                     <div class="flex flex-col lg:flex-row lg:-mt-10">
-                        <svg width="533" height="651" viewBox="0 0 533 651" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:mr-8 w-auto lg:-mt-0 -mt-56">
+                        <svg width="533" height="651" viewBox="0 0 533 651" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:mr-8 w-auto lg:-mt-0 -mt-52">
                             <rect width="533" height="651" rx="61" fill="#D9D9D9"/>
                         </svg>
 
-                        <svg width="533" height="651" viewBox="0 0 533 651" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-auto">
+                        <svg width="533" height="651" viewBox="0 0 533 651" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-auto lg:-mt-0 -mt-28">
                             <rect width="533" height="651" rx="61" fill="#D9D9D9"/>
                         </svg>
 
-                        <svg width="533" height="651" viewBox="0 0 533 651" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:ml-8 w-auto">
+                        <svg width="533" height="651" viewBox="0 0 533 651" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:ml-8 w-auto lg:-mt-0 -mt-28">
                             <rect width="533" height="651" rx="61" fill="#D9D9D9"/>
                         </svg>
                     </div>
@@ -114,7 +114,7 @@
             <div class="flex lg:flex-row flex-col lg:justify-between w-[100%] lg:items-center">
                 <div class="flex w-1/2 items-center">
                     <img src="/images/surround.jpg" alt="logo">
-                    <div class="flex flex-row lg:-ml-6 ml-44 font-lato">
+                    <div class="flex flex-row lg:-ml-6 ml-36 font-lato">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pl-2">
                             <rect width="28" height="28" fill="url(#pattern0_1721_192)"/>
                             <defs>

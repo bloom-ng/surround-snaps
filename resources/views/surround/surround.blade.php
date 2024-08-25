@@ -145,7 +145,7 @@
             <div class="flex flex-col lg:flex-row justify-center items-start mt-16">
 
                 <div class="flex flex-col">
-                    <div class="flex flex-row"> 
+                    <div class="flex lg:flex-row flex-col"> 
                         <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 lg:mr-10 leading-loose lg:mb-0 mb-5">
                             <h1 class="text-[#A3A3A3] text-[30px] font-lato font-extrabold leading-tight mb-2">Silver <br>Package</h1>
                             <svg width="304" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px]">
@@ -191,7 +191,7 @@
                             <svg width="200" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
                             </svg>
-                            <p class="text-[#A3A3A3] text-3xl font-lato font-extrabold mt-5">$550</p>
+                            <p class="text-[#A3A3A3] text-3xl font-lato font-extrabold mt-5">$500</p>
                         </div> 
         
                 
@@ -240,10 +240,10 @@
                             <svg width="200" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
                             </svg>
-                            <p class="text-3xl font-lato font-extrabold text-[#FFD700] mt-5">$650</p>        
+                            <p class="text-3xl font-lato font-extrabold text-[#FFD700] mt-5">$600</p>        
                         </div> 
                     </div>
-                    <p class="bg-white rounded-xl font-lato font-extrabold mt-5 py-4 w-[95%] text-black">Hourly packages start at $200/hr</p>
+                    <p class="bg-white rounded-xl font-lato font-extrabold lg:mt-5 mb-5 lg:mb-0 py-4 w-full lg:w-[95%] text-black">Hourly packages start at $200/hr</p>
                 </div>
 
                 <!-- Platinum Package -->
@@ -300,7 +300,7 @@
                     <svg width="200" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
                     </svg>
-                    <p class="text-[#1B998B] text-3xl font-lato font-extrabold mt-5">$750</p>        
+                    <p class="text-[#1B998B] text-3xl font-lato font-extrabold mt-5">$700</p>        
                 </div>
             </div>
         </div>
@@ -309,8 +309,8 @@
         <footer class="flex flex-col">
             <div class="flex lg:flex-row flex-col lg:justify-between w-[100%] lg:items-center">
                 <div class="flex w-1/2 items-center">
-                    <img src="/images/surround.jpg" alt="logo" class="lg:ml-10">
-                    <div class="flex flex-row lg:ml-0 ml-44 font-lato">
+                    <img src="/images/surround.jpg" alt="logo">
+                    <div class="flex flex-row lg:-ml-6 ml-36 font-lato">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pl-2">
                             <rect width="28" height="28" fill="url(#pattern0_1721_192)"/>
                             <defs>
@@ -324,13 +324,13 @@
                     </div>
                 </div>
 
-                <div class="flex lg:flex-row flex-col lg:w-1/2 lg:justify-end lg:mr-10 lg:ml-0 ml-10 lg:mb-0 mb-3">
-                    <a href=""><p class="lg:mr-10 font-lato">Privacy Policy</p></a>
+                <div class="flex lg:flex-row flex-col lg:w-1/2 lg:justify-end lg:mr-14 lg:ml-0 ml-10 lg:mb-0 mb-3">
+                    <a href=""><p class="lg:mr-7 font-lato">Privacy Policy</p></a>
                     <a href=""><p class="font-lato">Terms of Service</p></a>
                 </div>
             </div>
 
-            <div class="flex lg:flex-row flex-col ml-10 lg:ml-20 lg:items-center mb-5">
+            <div class="flex lg:flex-row flex-col ml-10 lg:ml-10 lg:items-center mb-5">
                 <div class="flex flex-row">
                     <a href=""><svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="36" height="36" fill="url(#pattern0_1721_189)"/>
@@ -353,7 +353,7 @@
                     </svg></a>
                 </div>
 
-                <p class="lg:mb-3 mb-5 font-lato"><strong>Stay in the Loop</strong> - Get updates on promotions and new features follow us on socials.</p>
+                <p class="lg:mb-3 font-lato"><strong>Stay in the Loop</strong> - Get updates on promotions and new features follow us on socials.</p>
 
             </div>
         </footer>

@@ -89,14 +89,14 @@
                     <div>
                         <input type="text" 
                         placeholder="Your Name" 
-                        class="rounded-full border border-orange-300 py-[5px] px-3 w-[195px] lg:w-[300px]" 
+                        class="rounded-full border border-orange-300 py-[5px] text-sm px-3 w-[177px] lg:w-[300px]" 
                         required>
                     </div>
 
                     <div>
                         <input type="text"
                         placeholder="Email Address"
-                        class="rounded-full border border-orange-300 py-[5px] px-3 w-[200px] lg:w-[300px]"
+                        class="rounded-full border border-orange-300 py-[5px] text-sm px-3 w-[177px] lg:w-[300px]"
                         required>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                     required>
                 </div>
 
-                <div class="flex flex-col lg:mt-4 mt-3">
+                <div class="flex flex-col lg:mt-4 mt-3 text-sm">
                     <textarea rows="8" class="rounded-2xl border border-orange-300 text-black py-2 px-3" placeholder="Your Message"></textarea>
                 </div>
             </form>
@@ -118,8 +118,8 @@
         <footer class="flex flex-col">
             <div class="flex lg:flex-row flex-col lg:justify-between w-[100%] lg:items-center">
                 <div class="flex w-1/2 items-center">
-                    <img src="/images/surround.jpg" alt="logo" class="lg:ml-10">
-                    <div class="flex flex-row lg:ml-0 ml-44">
+                    <img src="/images/surround.jpg" alt="logo">
+                    <div class="flex flex-row lg:-ml-6 ml-36 font-lato">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pl-2">
                             <rect width="28" height="28" fill="url(#pattern0_1721_192)"/>
                             <defs>
@@ -133,13 +133,13 @@
                     </div>
                 </div>
 
-                <div class="flex lg:flex-row flex-col lg:w-1/2 lg:justify-end lg:mr-20 lg:ml-0 ml-10 lg:mb-0 mb-3">
-                    <a href="" class="font-lato font-normal text-base"><p class="lg:mr-10">Privacy Policy</p></a>
-                    <a href="" class="font-lato font-normal text-base"><p>Terms of Service</p></a>
+                <div class="flex lg:flex-row flex-col lg:w-1/2 lg:justify-end lg:mr-14 lg:ml-0 ml-10 lg:mb-0 mb-3">
+                    <a href=""><p class="lg:mr-7 font-lato">Privacy Policy</p></a>
+                    <a href=""><p class="font-lato">Terms of Service</p></a>
                 </div>
             </div>
 
-            <div class="flex lg:flex-row flex-col ml-10 lg:ml-20 lg:items-center mb-5">
+            <div class="flex lg:flex-row flex-col ml-10 lg:ml-10 lg:items-center mb-5">
                 <div class="flex flex-row">
                     <a href=""><svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="36" height="36" fill="url(#pattern0_1721_189)"/>
@@ -162,7 +162,7 @@
                     </svg></a>
                 </div>
 
-                <p class="lg:mb-3 font-lato text-base font-normal"><strong>Stay in the Loop</strong> - Get updates on promotions and new features follow us on socials.</p>
+                <p class="lg:mb-3 font-lato"><strong>Stay in the Loop</strong> - Get updates on promotions and new features follow us on socials.</p>
 
             </div>
         </footer>

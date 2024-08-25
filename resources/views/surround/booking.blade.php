@@ -118,7 +118,7 @@
                                     placeholder="To check availability."
                                     required>
                             
-                                <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mt-2 lg:ml-[1250px] ml-[280px] absolute">
+                                <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mt-2 lg:ml-[1100px] ml-[240px] absolute">
                                     <rect width="26" height="26" fill="url(#pattern0_1963_359)"/>
                                     <defs>
                                     <pattern id="pattern0_1963_359" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -138,7 +138,7 @@
                                     placeholder="For scheduling purposes."
                                     required>
                             
-                                <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mt-2 lg:ml-[1250px] ml-[280px] absolute">
+                                <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mt-2 lg:ml-[1100px] ml-[240px] absolute">
                                     <rect width="26" height="26" fill="url(#pattern0_1963_360)"/>
                                     <defs>
                                     <pattern id="pattern0_1963_360" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -160,7 +160,7 @@
 
                             </div>
                 
-                            <button type="button" onclick="nextStep()" class="rounded-full w-20 ml-60 lg:ml-0 px-7 py-1 lg:mt-0 mt-3 bg-[#F4845F] flex justify-center text-center text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
+                            <button type="button" onclick="nextStep()" class="rounded-full w-20 ml-[220px] lg:ml-0 px-7 py-1 lg:mt-0 mt-3 bg-[#F4845F] flex justify-center text-center text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
                         </div>
                     </div>
                 </div>
@@ -275,10 +275,10 @@
                             <h1 class="mb-3 text-[#F4845F] text-3xl font-lato font-extrabold">Service Selection</h1>
                     
                            <div id="box1" class="flex lg:flex-row flex-col bg items-center justify-between">
-                                <div class="flex flex-col border-2 border-[#000000] justify-center items-center w-96 py-5 package-box cursor-pointer lg:mb-0 mb-10">
-                                    <div class="flex flex-row">
-                                        <p class="text-[28px] text-[#A3A3A3] font-lato font-extrabold text-center ml-[72px]">Silver <br>Package</p>
-                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ml-16">
+                                <div class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer lg:mb-0 mb-10">
+                                    <div class="flex flex-row justify-between w-full">
+                                        <p class="text-[28px] text-[#A3A3A3] font-lato text-center font-extrabold w-3/4 pl-20">Silver <br>Package</p>
+                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
                                             <rect width="30" height="30" fill="url(#pattern0_1969_570)"/>
                                             <defs>
                                             <pattern id="pattern0_1969_570" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -295,10 +295,10 @@
                                 </div>
 
 
-                                <div id="box2" class="flex flex-col border-2 border-[#000000] justify-center items-center w-96 py-5 package-box cursor-pointer lg:mb-0 mb-10">
-                                    <div class="flex flex-row">
-                                        <p class="text-[#FFD700] font-extrabold font-lato text-[28px] text-center ml-[72px]">Gold <br>Package</p>
-                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ml-16">
+                                <div id="box2" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer lg:mb-0 mb-10">
+                                    <div class="flex flex-row justify-between w-full">
+                                        <p class="text-[#FFD700] font-extrabold font-lato text-[28px] text-center w-3/4 pl-20">Gold <br>Package</p>
+                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
                                             <rect width="30" height="30" fill="url(#pattern0_1969_570)"/>
                                             <defs>
                                             <pattern id="pattern0_1969_570" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -315,10 +315,10 @@
                                 </div>
 
 
-                                <div id="box3" class="flex flex-col border-2 border-[#000000] justify-center items-center w-96 py-5 package-box cursor-pointer">
-                                    <div class="flex flex-row">
-                                        <p class="font-extrabold font-lato text-[28px] text-[#1B998B] text-center ml-[72px]">Platinum <br>Package</p>
-                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ml-16">
+                                <div id="box3" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer">
+                                    <div class="flex flex-row justify-between w-full">
+                                        <p class="font-extrabold font-lato text-[28px] text-[#1B998B] text-center w-3/4 pl-20">Platinum <br>Package</p>
+                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
                                             <rect width="30" height="30" fill="url(#pattern0_1969_570)"/>
                                             <defs>
                                             <pattern id="pattern0_1969_570" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -337,38 +337,38 @@
 
                            <h1 class="mt-5 text-xl font-normal font-lato ml-10">Additional services</h1>
 
-                           <div class="flex flex-col mt-5 px-5 lg:px-10 py-10 lg:py-14 bg-[#FFF5F1] w-full lg:w-[90%]">
+                           <div class="flex flex-col mt-5 px-5 lg:px-10 py-10 lg:py-14 bg-[#FFF5F1] w-full lg:w-[80%]">
                                 <div class="flex justify-between flex-row font-normal font-lato">
-                                    <p class="text-xl">Custom Backdrop</p>
-                                    <p class="text-xl">$2</p>
+                                    <p class="text-lg">Custom Backdrop</p>
+                                    <p class="text-lg">$2</p>
                                     <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1" >
                                     </div>
                                 </div>
 
                                 <div class="flex justify-between flex-row mt-3 font-normal font-lato">
-                                    <p class="text-xl">Props</p>
-                                    <p class="text-xl ml-[98px]">$2</p>
+                                    <p class="text-lg">Props</p>
+                                    <p class="text-lg ml-[98px]">$2</p>
                                     <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1">
                                     </div>
                                 </div>
 
                                 <div class="flex justify-between flex-row mt-3 font-normal font-lato">
-                                    <p class="text-xl">1 Additional hour</p>
-                                    <p class="text-xl">$2</p>
+                                    <p class="text-lg">1 Additional hour</p>
+                                    <p class="text-lg">$2</p>
                                     <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1">
                                     </div>
                                 </div>
 
                                 <div class="flex justify-between flex-row mt-3 font-normal font-lato">
-                                    <p class="text-xl">2 Additional hours</p>
-                                    <p class="text-xl mr-1">$2</p>
+                                    <p class="text-lg">2 Additional hours</p>
+                                    <p class="text-lg mr-1">$2</p>
                                     <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1">
                                     </div>
                                 </div>
 
                                 <div class="flex justify-between flex-row mt-3 font-normal font-lato">
-                                    <p class="text-xl">Red Carpet</p>
-                                    <p class="text-xl ml-14">$2</p>
+                                    <p class="text-lg">Red Carpet</p>
+                                    <p class="text-lg ml-14">$2</p>
                                     <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1">
                                     </div>
                                 </div>
@@ -478,13 +478,13 @@
             
                                 <div class="flex flex-col lg:items-end lg:w-1/4 mt-3">
                                     <div class="flex lg:flex-row">
-                                        <button type="button" onclick="prevStep()" class="rounded-full px-10 py-2 border border-[#f4845f] text-[#F4845F] bg-white font-montserrat font-extrabold text-[12px]">BACK</button>
+                                        <button type="button" onclick="prevStep()" class="rounded-full px-10 border border-[#f4845f] text-[#F4845F] bg-white lg:py-1  font-montserrat font-extrabold text-[12px]">BACK</button>
                             
-                                        <button id="confirmBookingButton" type="button" onclick="payment()" class="rounded-full ml-5 px-5 w-[70%] py-2 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">CONFIRM BOOKING</button>
+                                        <button id="confirmBookingButton" type="button" onclick="payment()" class="rounded-full lg:ml-5 ml-16 w-[100%] bg-[#F4845F] px-5 lg:py-1 lg:px-3 text-white font-montserrat font-extrabold text-[12px]">CONFIRM BOOKING</button>
                                     </div>
                                     <div class="flex flex-row justify-center items-center mt-3">
                                         <input class="w-4 h-4 items-center mr-7" type="checkbox" name="Check" id="Check"/>
-                                        <p class="text-[12px] font-semibold font-lato">By clicking “Confirm Booking”, you agree to <br>our terms of service and privacy policy.</p>
+                                        <p class="text-[12px] font-semibold font-lato">By clicking “Confirm Booking”, you agree to our terms of service and privacy policy.</p>
                                     </div>
                                 </div> 
                             </div>

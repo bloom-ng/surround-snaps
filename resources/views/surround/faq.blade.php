@@ -59,7 +59,7 @@
 
             <div class="flex flex-col items-center w-full">
 
-                <div class="flex flex-col bg-[#1b998b] w-full px-10 py-0 lg:px-10 lg:py-5 -mt-[170px] lg:-mt-[650px]">
+                <div class="flex flex-col bg-[#1b998b] w-full px-10 py-0 lg:px-10 lg:py-5 -mt-[170px] lg:-mt-[600px]">
                     <div class="flex flex-row mt-5 justify-center">
                         <svg width="10" height="70" viewBox="0 0 20 138" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 15C0 6.71573 6.71573 0 15 0H20V138H15C6.71573 138 0 131.284 0 123V15Z" fill="#F4845F"/>
@@ -120,8 +120,8 @@
                         </p>
                     </div>
                     
-                    <div class="flex flex-col mt-5 justify-center">
-                        <div class="flex flex-row -ml-2">
+                    <div class="flex flex-col mt-5 justify-center w-full lg:-ml-1">
+                        <div class="flex flex-row">
                             <div>
                                 <svg 
                                     width="20" height="200" viewBox="0 0 20 554" fill="none" xmlns="http://www.w3.org/2000/svg" 
@@ -130,8 +130,8 @@
                                 </svg>
                             </div>
 
-                            <div class="flex flex-col lg:-ml-[7px] -ml-1"> 
-                                <p class="bg-white flex justify-between items-center rounded-md text-[#F4845F] font-extrabold font-lato lg:text-2xl text-xl h-20 w-full pl-10 mr-52 -mb-1">
+                            <div class="flex flex-col lg:-ml-[5px] -ml-2"> 
+                                <p class="bg-white flex justify-between items-center rounded-md text-[#F4845F] font-extrabold font-lato lg:text-2xl text-xl h-20 w-[90%] lg:w-full pl-10 mr-52 -mb-1">
                                     FAQ Question 5
                                     <button>
                                         <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" class="mr-5">
@@ -141,7 +141,7 @@
                                     </button>
                                 </p>
                                 
-                                <p class="bg-[#FFF1ED] text-black lg:text-lg font-lato text-base pr-24 pl-10 py-5">
+                                <p class="bg-[#FFF1ED] text-black lg:text-lg font-lato text-base pr-12 lg:pr-24 w-[90%] lg:w-full pl-10 py-5">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
                                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
                                     laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
@@ -186,11 +186,11 @@
             </div>
         </div>
 
-        <footer class="flex flex-col lg:mb-0 mb-3">
+        <footer class="flex flex-col">
             <div class="flex lg:flex-row flex-col lg:justify-between w-[100%] lg:items-center">
                 <div class="flex w-1/2 items-center">
                     <img src="/images/surround.jpg" alt="logo">
-                    <div class="flex flex-row lg:-ml-6 ml-44 font-lato">
+                    <div class="flex flex-row lg:-ml-6 ml-36 font-lato">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pl-2">
                             <rect width="28" height="28" fill="url(#pattern0_1721_192)"/>
                             <defs>
