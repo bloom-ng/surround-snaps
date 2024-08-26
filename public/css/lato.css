@@ -94,3 +94,8 @@
       font-weight: 900;
       font-style: normal;
     }
+
+    html, body {
+      min-width: 100%;
+      overflow-x: hidden;
+    }
