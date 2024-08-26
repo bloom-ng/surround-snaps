@@ -22,11 +22,11 @@
                 <a href="/#about" class="font-lato font-normal text-base">ABOUT US</a>
                 <a href="/#pricing" class="font-lato font-normal text-base">PRICING</a>
                 <a href="/gallery" class="font-lato font-normal text-base">GALLERY</a>
-                <a href="/faq" class="font-lato font-normal text-base">FAQ</a>
+                {{-- <a href="/faq" class="font-lato font-normal text-base">FAQ</a> --}}
                 <a href="/contact" class="text-[#1b998b] font-lato font-normal text-base">CONTACT US</a>
             </div>
             <div class="flex flex-row w-[30%] justify-center items-center pl-24">
-                <a href="/booking"><div class="bg-[#f4845f] font-extrabold text-white px-8 py-1 rounded-2xl font-montserrat">BOOK NOW</div></a>
+                <a href="/contact"><div class="bg-[#f4845f] font-extrabold text-white px-8 py-1 rounded-2xl font-montserrat">BOOK NOW</div></a>
             </div>
         </div>
 
@@ -45,7 +45,7 @@
                 <a href="/#about" class="py-2 font-lato font-normal text-base text-black">ABOUT US</a>
                 <a href="/#pricing" class="py-2 font-lato font-normal text-base text-black">PRICING</a>
                 <a href="/gallery" class="py-2 font-lato font-normal text-base text-black">GALLERY</a>
-                <a href="/faq" class="py-2 font-lato font-normal text-base text-black">FAQ</a>
+                {{-- <a href="/faq" class="py-2 font-lato font-normal text-base text-black">FAQ</a> --}}
                 <a href="/contact" class="py-2 text-[#1b998b] font-lato font-normal text-base">CONTACT US</a>
         </nav>
         <!-- /mobile header -->

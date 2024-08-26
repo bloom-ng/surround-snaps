@@ -26,7 +26,7 @@
                 <a href="/contact" class="font-normal font-lato text-base">CONTACT US</a>
             </div>
             <div class="flex flex-row w-[30%] justify-center items-center pl-24">
-                <a href="/booking"><div class="bg-[#F4845F] font-montserrat font-extrabold text-white px-8 py-1 rounded-2xl">BOOK NOW</div></a>
+                <a href="/contact"><div class="bg-[#F4845F] font-montserrat font-extrabold text-white px-8 py-1 rounded-2xl">BOOK NOW</div></a>
             </div>
         </div>
 
