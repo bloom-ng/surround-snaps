@@ -13,20 +13,20 @@
 <body>
     <div class="flex flex-col bg-white">
         <!-- desktop header -->
-        <div class="hidden md:flex flex-row w-[100%]">
-            <div class="w-[30%] pl-10">
-                <a href=""><img src="/images/surround.jpg" alt="logo"></a>
+        <div class="hidden md:flex flex-row w-[100%] justify-between">
+            <div class="lg:w-[30%] md:w-[20%]">
+                <img src="/images/surround.jpg" alt="logo">
             </div>
-            <div class="flex flex-row justify-between items-center w-[50%] font-semibold">
-                <a href="/" class="font-lato font-normal text-base">HOME</a>
-                <a href="/#about" class="font-lato font-normal text-base">ABOUT US</a>
-                <a href="/#pricing" class="font-lato font-normal text-base">PRICING</a>
-                <a href="/gallery" class="font-lato font-normal text-base">GALLERY</a>
-                {{-- <a href="/faq" class="font-lato font-normal text-base">FAQ</a> --}}
-                <a href="/contact" class="text-[#1b998b] font-lato font-normal text-base">CONTACT US</a>
+            <div class="flex flex-row justify-between items-center lg:w-[50%] md:w-[60%]">
+                <a href="/" class="font-normal font-lato lg:text-base">HOME</a>
+                <a href="#about" id="aboutLink" class="font-normal font-lato lg:text-base">ABOUT US</a>
+                <a href="#pricing" id="pricingLink" class="font-normal font-lato lg:text-base">PRICING</a>
+                <a href="/gallery" class="font-normal font-lato lg:text-base">GALLERY</a>
+                {{-- <a href="/faq" class="font-normal font-lato lg:text-base">FAQ</a> --}}
+                <a href="/contact" class="text-[#1b998b] font-normal font-lato lg:text-base">CONTACT US</a>
             </div>
-            <div class="flex flex-row w-[30%] justify-center items-center pl-24">
-                <a href="/booking"><div class="bg-[#f4845f] font-extrabold text-white px-8 py-1 rounded-2xl font-montserrat">BOOK NOW</div></a>
+            <div class="flex flex-row md:w-[20%] lg:w-[30%] justify-center items-center font-montserrat font-extrabold md:text-base lg:text-lg">
+                <a href="/booking"><div class="bg-[#F4845F] text-white lg:px-8 lg:py-1 md:px-4 md:py-1 lg:ml-44 rounded-2xl">BOOK NOW</div></a>
             </div>
         </div>
 
@@ -84,19 +84,19 @@
                 </p>
             </div>
             
-            <form class="flex flex-col w-[90%] lg:w-[50%] bg-white rounded-2xl lg:mr-20 ml-5 lg:p-10 p-5 lg:mt-10 lg:mb-10 mb-10">
-                <div class="flex flex-row justify-between">
-                    <div>
+            <form class="flex flex-col md:flex-col w-[90%] md:w-[96%] lg:w-[50%] bg-white rounded-2xl lg:mr-20 ml-5 lg:p-10 p-5 lg:mt-10 lg:mb-10 mb-10">
+                <div class="flex flex-row w-full">
+                    <div class="flex w-full">
                         <input type="text" 
                         placeholder="Your Name" 
-                        class="rounded-full border border-orange-300 py-[5px] text-sm px-3 w-[177px] lg:w-[300px]" 
+                        class="rounded-full border border-orange-300 py-[5px] text-sm px-3 w-[100%]" 
                         required>
                     </div>
 
-                    <div>
+                    <div class="flex w-full">
                         <input type="text"
                         placeholder="Email Address"
-                        class="rounded-full border border-orange-300 py-[5px] text-sm px-3 w-[177px] lg:w-[300px]"
+                        class="rounded-full border border-orange-300 py-[5px] text-sm px-3 w-[100%]"
                         required>
                     </div>
                 </div>
@@ -116,11 +116,11 @@
 
 
         <footer class="flex flex-col">
-            <div class="flex lg:flex-row flex-col lg:justify-between w-[100%] lg:items-center">
-                <div class="flex w-1/2 items-center">
+            <div class="flex lg:flex-row md:flex-row flex-col lg:justify-between md:justify-between w-[100%] lg:items-center">
+                <div class="flex lg:w-1/2 md:w-1/2 items-center lg:justify-start md:justify-start  justify-between">
                     <img src="/images/surround.jpg" alt="logo">
-                    <div class="flex flex-row lg:-ml-6 ml-36 font-lato">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pl-2">
+                    <div class="flex flex-row font-lato lg:items-start md:items-start md:mr-0 lg:mr-0 mr-5 justify-end">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lg:pl-2">
                             <rect width="28" height="28" fill="url(#pattern0_1721_192)"/>
                             <defs>
                             <pattern id="pattern0_1721_192" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -133,13 +133,13 @@
                     </div>
                 </div>
 
-                <div class="flex lg:flex-row flex-col lg:w-1/2 lg:justify-end lg:mr-14 lg:ml-0 ml-10 lg:mb-0 mb-3">
-                    <a href=""><p class="lg:mr-7 font-lato">Privacy Policy</p></a>
+                <div class="flex lg:flex-row md:items-center lg:items-center md:flex-row flex-col lg:w-1/2 md:w-1/2 md:justify-end lg:justify-end lg:mr-14 lg:ml-0 md:mr-12 md:ml-0 ml-10 lg:mb-0 mb-3">
+                    <a href=""><p class="lg:mr-7 md:mr-5 font-lato">Privacy Policy</p></a>
                     <a href=""><p class="font-lato">Terms of Service</p></a>
                 </div>
             </div>
 
-            <div class="flex lg:flex-row flex-col ml-10 lg:ml-10 lg:items-center mb-5">
+            <div class="flex md:flex-row md:items-center lg:flex-row flex-col ml-10 lg:ml-10 lg:items-center mb-5">
                 <div class="flex flex-row">
                     <a href=""><svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="36" height="36" fill="url(#pattern0_1721_189)"/>

@@ -13,20 +13,20 @@
 <body>
     <div class="flex flex-col bg-white">
         <!-- desktop header -->
-        <div class="hidden md:flex flex-row w-[100%]">
-            <div class="w-[30%] ">
+        <div class="hidden md:flex flex-row w-[100%] justify-between">
+            <div class="lg:w-[30%] md:w-[20%]">
                 <img src="/images/surround.jpg" alt="logo">
             </div>
-            <div class="flex flex-row justify-between items-center w-[50%]">
-                <a href="/" class="text-[#1b998b] font-normal font-lato text-base">HOME</a>
-                <a href="#about" id="aboutLink" class="font-normal font-lato text-base">ABOUT US</a>
-                <a href="#pricing" id="pricingLink" class="font-normal font-lato text-base">PRICING</a>
-                <a href="/gallery" class="font-normal font-lato text-base">GALLERY</a>
-                {{-- <a href="/faq" class="font-normal font-lato text-base">FAQ</a> --}}
-                <a href="/contact" class="font-normal font-lato text-base">CONTACT US</a>
+            <div class="flex flex-row justify-between items-center lg:w-[50%] md:w-[60%]">
+                <a href="/" class="text-[#1b998b] font-normal font-lato lg:text-base">HOME</a>
+                <a href="#about" id="aboutLink" class="font-normal font-lato lg:text-base">ABOUT US</a>
+                <a href="#pricing" id="pricingLink" class="font-normal font-lato lg:text-base">PRICING</a>
+                <a href="/gallery" class="font-normal font-lato lg:text-base">GALLERY</a>
+                {{-- <a href="/faq" class="font-normal font-lato lg:text-base">FAQ</a> --}}
+                <a href="/contact" class="font-normal font-lato lg:text-base">CONTACT US</a>
             </div>
-            <div class="flex flex-row w-[30%] justify-center items-center pl-24 font-montserrat font-extrabold text-xl">
-                <a href="/booking"><div class="bg-[#F4845F] font-semibold text-white px-8 py-1 rounded-2xl">BOOK NOW</div></a>
+            <div class="flex flex-row md:w-[20%] lg:w-[30%] justify-center items-center font-montserrat font-extrabold md:text-base lg:text-lg">
+                <a href="/booking"><div class="bg-[#F4845F] text-white lg:px-8 lg:py-1 md:px-4 md:py-1 lg:ml-44 rounded-2xl">BOOK NOW</div></a>
             </div>
         </div>
 
@@ -42,8 +42,8 @@
 
         <nav id="menu" class="hidden flex flex-col items-start p-4 bg-white font-semibold ml-4">
                 <a href="/" class="pb-2 text-[#1b998b] font-normal font-lato text-base">HOME</a>
-                <a href="" class="py-2 text-black font-normal font-lato text-base">ABOUT US</a>
-                <a href="" class="py-2 text-black font-normal font-lato text-base">PRICING</a>
+                <a href="#about" class="py-2 text-black font-normal font-lato text-base">ABOUT US</a>
+                <a href="#pricing" class="py-2 text-black font-normal font-lato text-base">PRICING</a>
                 <a href="/gallery" class="py-2 text-black font-normal font-lato text-base">GALLERY</a>
                 {{-- <a href="/faq" class="py-2 text-black font-normal font-lato text-base">FAQ</a> --}}
                 <a href="/contact" class="py-2 text-black font-normal font-lato text-base">CONTACT US</a>
@@ -139,14 +139,12 @@
                 </div>    
             </div>
         </div>
-
         <div id="pricing" class="flex flex-col bg-[#1b998b] text-white justify-center text-center p-10 lg:p-16">
             <h1 class="lg:text-4xl text-3xl font-lato font-extrabold">Choose Your Perfect Package</h1>
-            <div class="flex flex-col lg:flex-row justify-center items-start mt-16">
-
-                <div class="flex flex-col">
+            <div class="flex flex-col lg:flex-row justify-center items-center mt-16">
+                <div class="flex flex-col -mt-28">
                     <div class="flex lg:flex-row flex-col"> 
-                        <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 lg:mr-10 leading-loose lg:mb-0 mb-5">
+                        <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 lg:mr-10 leading-loose lg:mb-0 mb-5 lg:order-1 order-1">
                             <h1 class="text-[#A3A3A3] text-[30px] font-lato font-extrabold leading-tight mb-2">Silver <br>Package</h1>
                             <svg width="304" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px]">
                                 <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
@@ -195,7 +193,7 @@
                         </div> 
         
                 
-                        <div class="flex flex-col items-center bg-white rounded-3xl leading-loose   lg:mr-10 py-12 px-10 lg:mb-0 mb-5">
+                        <div class="flex flex-col items-center bg-white rounded-3xl leading-loose lg:mr-10 py-12 px-10 lg:mb-0 mb-5 lg:order-2 order-2">
                             <h1 class="text-[#FFD700] font-lato font-extrabold text-[30px] leading-tight mb-2">Gold <br>Package</h1>
                             <svg width="304" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px]">
                                 <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
@@ -243,11 +241,13 @@
                             <p class="text-3xl font-lato font-extrabold text-[#FFD700] mt-5">$600</p>        
                         </div> 
                     </div>
-                    <p class="bg-white rounded-xl font-lato font-extrabold lg:mt-5 mb-5 lg:mb-0 py-4 w-full lg:w-[95%] text-black">Hourly packages start at $200/hr</p>
+                    <div class="bg-white rounded-xl font-lato font-extrabold lg:mt-5 mb-5 lg:mb-0 py-4 w-full lg:w-[95%] text-black lg:order-3 order-4">
+                        <p>Hourly packages start at $200/hr</p>
+                    </div>
                 </div>
 
                 <!-- Platinum Package -->
-                <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 leading-loose">
+                <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 leading-loose lg:order-4 -order-1 lg:mb-0 mb-32">
                     <h1 class="text-[#1B998B] font-lato font-extrabold text-[30px] leading-tight mb-2">Platinum <br>Package</h1>
                     <svg width="304" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px]">
                         <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
@@ -297,6 +297,10 @@
                         <circle cx="5.5" cy="5.5" r="5.5" fill="#F4845F"/>
                     </svg>                    
                     <p class="text-black font-lato text-[18px] mt-2 mb-4">Online photo gallery with password protection</p>
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="5.5" cy="5.5" r="5.5" fill="#F4845F"/>
+                    </svg>                    
+                    <p class="text-black font-lato text-[18px] mt-2 mb-4">Smoke Machine</p>
                     <svg width="200" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
                     </svg>
@@ -307,11 +311,11 @@
         
 
         <footer class="flex flex-col">
-            <div class="flex lg:flex-row flex-col lg:justify-between w-[100%] lg:items-center">
-                <div class="flex w-1/2 items-center">
+            <div class="flex lg:flex-row md:flex-row flex-col lg:justify-between md:justify-between w-[100%] lg:items-center">
+                <div class="flex lg:w-1/2 md:w-1/2 items-center lg:justify-start md:justify-start  justify-between">
                     <img src="/images/surround.jpg" alt="logo">
-                    <div class="flex flex-row lg:-ml-6 ml-36 font-lato">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pl-2">
+                    <div class="flex flex-row font-lato lg:items-start md:items-start md:mr-0 lg:mr-0 mr-5 justify-end">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lg:pl-2">
                             <rect width="28" height="28" fill="url(#pattern0_1721_192)"/>
                             <defs>
                             <pattern id="pattern0_1721_192" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -324,13 +328,13 @@
                     </div>
                 </div>
 
-                <div class="flex lg:flex-row flex-col lg:w-1/2 lg:justify-end lg:mr-14 lg:ml-0 ml-10 lg:mb-0 mb-3">
-                    <a href=""><p class="lg:mr-7 font-lato">Privacy Policy</p></a>
+                <div class="flex lg:flex-row md:items-center lg:items-center md:flex-row flex-col lg:w-1/2 md:w-1/2 md:justify-end lg:justify-end lg:mr-14 lg:ml-0 md:mr-12 md:ml-0 ml-10 lg:mb-0 mb-3">
+                    <a href=""><p class="lg:mr-7 md:mr-5 font-lato">Privacy Policy</p></a>
                     <a href=""><p class="font-lato">Terms of Service</p></a>
                 </div>
             </div>
 
-            <div class="flex lg:flex-row flex-col ml-10 lg:ml-10 lg:items-center mb-5">
+            <div class="flex md:flex-row md:items-center lg:flex-row flex-col ml-10 lg:ml-10 lg:items-center mb-5">
                 <div class="flex flex-row">
                     <a href=""><svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="36" height="36" fill="url(#pattern0_1721_189)"/>
