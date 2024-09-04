@@ -58,7 +58,7 @@
             </div>
 
             <div class="flex flex-col items-center w-full">
-                <div class="flex flex-col bg-[#1b998b] w-full mx-20 py-10 lg:px-10 lg:py-10 md:px-10 md:py-10 -mt-[160px] md:-mt-[360px] lg:-mt-[670px]">
+                <div class="flex flex-col bg-[#1b998b] w-full mx-20 py-10 lg:px-10 lg:py-10 md:px-10 md:py-10 -mt-[160px] md:-mt-[310px] lg:-mt-[670px]">
                     <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6 px-4">
                         <svg class="w-full max-w-[calc(100%-16px)]" height="auto" viewBox="0 0 533 651" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="533" height="651" rx="61" fill="#D9D9D9"/>

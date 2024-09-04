@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/lato.css">
 </head>
 <body>
-    <div class="flex flex-col bg-white">
+    <div class="flex flex-col">
         <!-- desktop header -->
         <div class="hidden md:flex flex-row w-[100%] justify-between">
             <div class="lg:w-[30%] md:w-[20%]">
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="flex flex-col lg:mt-4 mt-3 text-sm">
-                    <textarea rows="8" class="rounded-2xl border border-orange-300 text-black py-2 px-3" placeholder="Your Message"></textarea>
+                    <textarea rows="15" class="rounded-2xl border border-orange-300 text-black py-2 px-3" placeholder="Your Message"></textarea>
                 </div>
             </form>
         </div>
@@ -163,7 +163,6 @@
                 </div>
 
                 <p class="lg:mb-3 font-lato"><strong>Stay in the Loop</strong> - Get updates on promotions and new features follow us on socials.</p>
-
             </div>
         </footer>
     </div>
