@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +35,10 @@ Route::get('/contact', function () {
     return view('surround.contact');
 });
 
-Route::get('/booking', function () {
-    return view('surround.contact');
-});
+Route::get('/booking', [BookingController::class, 'index']);
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+Route::post('/booking/check-availability', [BookingController::class, 'checkAvailability'])->name('booking.checkAvailability');
+
 Route::get('/payment', function () {
     return view('surround.payment');
 });

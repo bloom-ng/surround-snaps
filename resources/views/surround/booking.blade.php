@@ -51,7 +51,10 @@
 
         <!-- /mobile header -->
 
-        <form id="multiStepForm" class="w-full">
+        <form id="multiStepForm" method="POST" class="w-full">
+            @csrf
+            <input type="hidden" id="package" name="package" value="silver">
+            <input type="hidden" id="additional_hours" name="additional_hours" value="0">
             <!-- Step 1 -->
             <div id="step1" class="flex step flex-col justify-center items-center w-full">
                 <div class="bg-[#F4845F] lg:mt-0 mt-0 flex flex-col justify-center lg:w-[100%] w-[100%] py-7 lg:py-7 px-8 lg:px-16">
@@ -79,16 +82,16 @@
                         <h1 class="mb-3 text-[#F4845F] text-2xl lg:text-3xl font-lato font-extrabold">Basic Information & Booking Details</h1>
                 
                         <div class="flex flex-col">
-                            <label for="name" class="mb-1 ml-5 font-lato font-normal text-sm">Full Name</label>
-                            <input type="text"
+                            <label for="full_name" class="mb-1 ml-5 font-lato font-normal text-sm">Full Name</label>
+                            <input type="text" name="full_name" id="full_name"
                                 class="rounded-full px-5 py-[8px] lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5 lg:text-sm text-[9px]"
                                 placeholder="Required for personalization and contact."
                                 required>
                         </div>
                 
                         <div class="flex flex-col">
-                            <label for="number" class="mb-1 ml-5 font-lato font-normal text-sm">Contact Number</label>
-                            <input type="text"
+                            <label for="contact_number" class="mb-1 ml-5 font-lato font-normal text-sm">Contact Number</label>
+                            <input type="text" name="contact_number" id="contact_number"
                                 class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic mb-3 lg:mb-5 lg:text-sm text-[9px]"
                                 placeholder="Needed for further communication or last-minute notification."
                                 required>
@@ -96,29 +99,32 @@
                 
                         <div class="flex flex-col">
                             <label for="email" class="mb-1 ml-5 font-lato font-normal text-sm">Email Address</label>
-                            <input type="text"
+                            <input type="text" name="email" id="email"
                                 class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic lg:text-sm text-[9px]"
                                 placeholder="For sending booking confirmations and promotional offers."
                                 required>
                         </div>
 
                         <div class="flex flex-col mt-3">
-                            <label for="eventype" class="mb-1 ml-5 font-lato font-normal text-sm">Event Type (e.g., Wedding, Corporate Event, Birthday Party, etc)</label>
-                            <input type="text"
+                            <label for="event_type" class="mb-1 ml-5 font-lato font-normal text-sm">Event Type (e.g., Wedding, Corporate Event, Birthday Party, etc)</label>
+                            <input type="text" name="event_type" id="event_type"
                                 class="rounded-full px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5"
                                 placeholder="Allows us to prepare the appropriate setup and offers tailored to specific events."
                                 required>
                         </div>
 
                         <div class="flex flex-col text-sm">
-                            <label for="date" class="mb-1 ml-5 font-lato font-normal">Date of event</label>
+                            <label for="event_date" class="mb-1 ml-5 font-lato font-normal">Date of event</label>
                             <div class="flex flex-row w-full">
-                                <input type="text"
+                                <input type="date"
+                                    id="event_date"
+                                    name="event_date"
                                     class="rounded-full border py-[8px] text-[10px] lg:text-sm px-5 lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                     placeholder="To check availability."
+                                    min="{{ date('Y-m-d', strtotime('+1 week')) }}"
                                     required>
                             
-                                <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mt-2 lg:ml-[1100px] ml-[240px] absolute">
+                                <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class=" hidden mt-2 lg:ml-[1100px] ml-[240px] absolute">
                                     <rect width="26" height="26" fill="url(#pattern0_1963_359)"/>
                                     <defs>
                                     <pattern id="pattern0_1963_359" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -131,14 +137,14 @@
                         </div>
                     
                         <div class="flex flex-col text-sm">
-                            <label for="date" class="mb-1 ml-5 font-lato font-normal">Event Start Time</label>
+                            <label for="event_start_time" class="mb-1 ml-5 font-lato font-normal">Event Start Time</label>
                             <div class="flex flex-row w-full">
-                                <input type="text"
+                                <input type="time" name="event_start_time" id="event_start_time"
                                     class="rounded-full border px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                     placeholder="For scheduling purposes."
                                     required>
                             
-                                <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mt-2 lg:ml-[1100px] ml-[240px] absolute">
+                                <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="hidden mt-2 lg:ml-[1100px] ml-[240px] absolute">
                                     <rect width="26" height="26" fill="url(#pattern0_1963_360)"/>
                                     <defs>
                                     <pattern id="pattern0_1963_360" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -187,17 +193,17 @@
                         <div class="flex flex-col bg-white rounded-2xl mb-5 px-14 py-7 w-full">
                             <h1 class="mb-3 text-[#F4845F] text-2xl lg:text-3xl font-lato font-extrabold">Location and Logistics</h1>                    
                             <div class="flex flex-col">
-                                <label for="eventype" class="mb-1 ml-5 font-lato font-normal text-sm">Venue Address</label>
-                                <input type="text"
+                                <label for="venue_address" class="mb-1 ml-5 font-lato font-normal text-sm">Venue Address</label>
+                                <input type="text" name="venue_address" id="venue_address"
                                     class="rounded-full px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border border-orange-300 placeholder:italic mb-5"
                                     placeholder="For planning logistics and assessing travel requirements."
                                     required>
                             </div>
                     
                             <div class="flex flex-col text-sm">
-                                <label for="date" class="mb-1 ml-5 font-lato font-normal">Venue Type (Indoor, Outdoor, Garden, etc)</label>
+                                <label for="venue_type" class="mb-1 ml-5 font-lato font-normal">Venue Type (Indoor, Outdoor, Garden, etc)</label>
                                 <div class="flex flex-row w-full">
-                                    <input type="text"
+                                    <input type="text" name="venue_type" id="venue_type"
                                         class="rounded-full border py-[8px] text-[10px] lg:text-sm px-5 lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                         placeholder="Helps in preparing necessary equipment and contingency plans."
                                         required>
@@ -205,9 +211,9 @@
                             </div>
                     
                             <div class="flex flex-col text-sm">
-                                <label for="date" class="mb-1 ml-5 font-lato font-normal">Contact Person</label>
+                                <label for="contact_person" class="mb-1 ml-5 font-lato font-normal">Contact Person</label>
                                 <div class="flex flex-row w-full">
-                                    <input type="text"
+                                    <input type="text" name="contact_person" id="contact_person"
                                         class="rounded-full border px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                         placeholder="Point of contact on the day of the event"
                                         required>
@@ -215,9 +221,9 @@
                             </div>
             
                             <div class="flex flex-col text-sm">
-                                <label for="date" class="mb-1 ml-5 font-lato font-normal text-sm">Contact Person Phone Number</label>
+                                <label for="contact_person_phone" class="mb-1 ml-5 font-lato font-normal text-sm">Contact Person Phone Number</label>
                                 <div class="flex flex-row w-full">
-                                    <input type="text"
+                                    <input type="text" name="contact_person_phone" id="contact_person_phone"
                                         class="rounded-full border px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                         placeholder="Point of contact on the day of the event"
                                         required>       
@@ -225,8 +231,13 @@
                             </div>
 
                             <div class="flex flex-col lg:mt-4 mt-0">
-                                <label for="requests" class="mb-1 ml-5 font-lato font-normal text-sm">Special Instructions or Requests</label>
-                                <textarea rows="10" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] placeholder:italic" 
+                                <label for="event_theme" class="mb-1 ml-5 font-lato font-normal text-sm">Does your event require a specific theme</label>
+                                <textarea rows="10" name="event_theme" id="event_theme" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] placeholder:italic" 
+                                placeholder="Any information about the theme of the event."></textarea>
+                            </div>
+                            <div class="flex flex-col lg:mt-4 mt-0">
+                                <label for="special_instructions" class="mb-1 ml-5 font-lato font-normal text-sm">Special Instructions or Requests</label>
+                                <textarea rows="10" name="special_instructions" id="special_instructions" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] placeholder:italic" 
                                 placeholder="Field for anything specific the client needs, like theme-based props or accessibility considerations."></textarea>
                             </div>
                     
@@ -274,8 +285,8 @@
                         <div class="flex flex-col bg-white rounded-2xl mb-5 px-14 py-7 w-full">
                             <h1 class="mb-3 text-[#F4845F] text-3xl font-lato font-extrabold">Service Selection</h1>
                     
-                           <div id="box1" class="flex lg:flex-row flex-col bg items-center justify-between">
-                                <div class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer lg:mb-0 mb-10">
+                           <div  class=" flex lg:flex-row flex-col bg items-center justify-between">
+                                <div id="box1" data-package="silver" data-cost="{{ $packageCost['silver'] }}"  class="package-box border-[#000000] border-[#F4845F] flex flex-col border-2  justify-center items-center w-80 lg:w-[374px] py-5 cursor-pointer lg:mb-0 mb-10">
                                     <div class="flex flex-row justify-between w-full">
                                         <p class="text-[28px] text-[#A3A3A3] font-lato text-center font-extrabold w-3/4 pl-20">Silver <br>Package</p>
                                         <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
@@ -295,7 +306,7 @@
                                 </div>
 
 
-                                <div id="box2" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer lg:mb-0 mb-10">
+                                <div id="box2" data-package="gold" data-cost="{{ $packageCost['gold'] }}" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer lg:mb-0 mb-10">
                                     <div class="flex flex-row justify-between w-full">
                                         <p class="text-[#FFD700] font-extrabold font-lato text-[28px] text-center w-3/4 pl-20">Gold <br>Package</p>
                                         <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
@@ -315,7 +326,7 @@
                                 </div>
 
 
-                                <div id="box3" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer">
+                                <div id="box3" data-package="platinum" data-cost="{{ $packageCost['platinum'] }}" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer">
                                     <div class="flex flex-row justify-between w-full">
                                         <p class="font-extrabold font-lato text-[28px] text-[#1B998B] text-center w-3/4 pl-20">Platinum <br>Package</p>
                                         <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
@@ -338,40 +349,28 @@
                            <h1 class="mt-5 text-xl font-normal font-lato ml-10">Additional services</h1>
 
                            <div class="flex flex-col mt-5 px-5 lg:px-10 py-10 lg:py-14 bg-[#FFF5F1] w-full lg:w-[80%]">
-                                <div class="flex justify-between flex-row font-normal font-lato">
-                                    <p class="text-lg">Custom Backdrop</p>
-                                    <p class="text-lg">$2</p>
-                                    <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1" >
-                                    </div>
-                                </div>
-
-                                <div class="flex justify-between flex-row mt-3 font-normal font-lato">
-                                    <p class="text-lg">Props</p>
-                                    <p class="text-lg ml-[98px]">$2</p>
-                                    <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1">
-                                    </div>
-                                </div>
+                               
 
                                 <div class="flex justify-between flex-row mt-3 font-normal font-lato">
                                     <p class="text-lg">1 Additional hour</p>
-                                    <p class="text-lg">$2</p>
-                                    <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1">
+                                    <p class="text-lg">$200</p>
+                                    <div data-item="additional_hours" data-value="1" class="inner-circle tap-box w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer  transition-bg mt-1">
                                     </div>
                                 </div>
 
                                 <div class="flex justify-between flex-row mt-3 font-normal font-lato">
                                     <p class="text-lg">2 Additional hours</p>
-                                    <p class="text-lg mr-1">$2</p>
-                                    <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1">
+                                    <p class="text-lg mr-1">$400</p>
+                                    <div data-item="additional_hours" data-value="2" class="inner-circle tap-box w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer transition-bg mt-1">
+                                    </div>
+                                </div>
+                                <div class="flex justify-between flex-row mt-3 font-normal font-lato">
+                                    <p class="text-lg">3 Additional hours</p>
+                                    <p class="text-lg mr-1">$600</p>
+                                    <div data-item="additional_hours" data-value="3" class="inner-circle tap-box w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer transition-bg mt-1">
                                     </div>
                                 </div>
 
-                                <div class="flex justify-between flex-row mt-3 font-normal font-lato">
-                                    <p class="text-lg">Red Carpet</p>
-                                    <p class="text-lg ml-14">$2</p>
-                                    <div class="inner-circle w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer tap-box transition-bg mt-1">
-                                    </div>
-                                </div>
                            </div>
                     
                            <div class="flex flex-col justify-center lg:flex-row w-full mt-10">
@@ -422,48 +421,51 @@
                             <div class="flex flex-row w-full">
                                 <div class="flex flex-col lg:mr-0 mr-5 w-1/2">
                                     <label for="name" class="mb-1 font-lato font-normal">Full Name</label>
-                                    <p class="text-lg font-lato font-bold mb-3 ">John Doe</p>
+                                    <p id="confirmFull_name" class="text-lg font-lato font-bold mb-3 "></p>
                                     
                                    <label for="feedback" class="mb-1 font-lato font-normal">Contact Number</label>
-                                    <p class="text-lg font-lato font-bold mb-3">+1 234 452 5467</p>
+                                    <p id="confirmContact_number" class="text-lg font-lato font-bold mb-3"></p>
                                     
                                     <label for="rating" class="mb-1 font-lato font-normal">Email Address</label>
-                                    <p class="text-lg font-lato font-bold mb-3">johndoe@gmail.com</p>
+                                    <p id="confirmEmail" class="text-lg font-lato font-bold mb-3"></p>
                                     
                                     <label for="package" class="mb-1 font-normal font-lato">Event Type</label>
-                                    <p class="text-lg mb-3 font-lato font-bold">Wedding</p>
+                                    <p id="confirmEvent_type" class="text-lg mb-3 font-lato font-bold"></p>
 
                                     <label for="package" class="mb-1 font-lato font-normal">Event Date</label>
-                                    <p class="text-lg font-lato font-bold mb-3">24/07/2025</p>
+                                    <p id="confirmEvent_date" class="text-lg font-lato font-bold mb-3"></p>
                                     
                                     <label for="package" class="mb-1 font-lato font-normal">Event Start Time</label>
-                                    <p class="text-lg font-lato font-bold mb-3">10:30</p>
+                                    <p id="confirmEvent_start_time" class="text-lg font-lato font-bold mb-3"></p>
 
                                     <label for="Address" class="mb-1 font-lato font-normal">Venue Address</label>
-                                    <p class="text-lg font-lato font-bold mb-3">No. 1, Somewhere Street, Alright Town</p>
+                                    <p id="confirmVenue_address" class="text-lg font-lato font-bold mb-3"></p>
                                 </div>
                                     
                                 <div class="flex flex-col lg:ml-0 ml-5 w-1/2">
                                     <label for="Venue" class="mb-1 font-lato font-normal">Venue Type</label>
-                                    <p class="text-lg font-lato font-bold mb-3">Closed Garden</p>
+                                    <p id="confirmVenue_type" class="text-lg font-lato font-bold mb-3"></p>
 
                                     <label for="contact" class="mb-1 font-lato font-normal">Contact Person</label>
-                                    <p class="text-lg font-lato font-bold mb-3">Johanna Doe</p>
+                                    <p id="confirmContact_person" class="text-lg font-lato font-bold mb-3"></p>
 
-                                    <label for="package" class=" mb-1 font-lato font-normal">Contact Person</label>
-                                    <p class="text-lg font-lato font-bold mb-3">+1 244 553 5667</p>
+                                    <label for="package" class=" mb-1 font-lato font-normal">Contact Person Phone</label>
+                                    <p id="confirmContact_person_phone" class="text-lg font-lato font-bold mb-3"></p>
+
+                                    <label for="package" class=" mb-1 font-lato font-normal">Event Theme</label>
+                                    <p id="confirmEvent_theme" class="text-lg font-lato font-bold mb-3"></p>
 
                                     <label for="package" class=" mb-1 font-lato font-normal">Special Request</label>
-                                    <p class="text-lg font-lato font-bold mb-3">None</p>
+                                    <p id="confirmSpecial_instructions" class="text-lg font-lato font-bold mb-3"></p>
 
                                     <label for="package" class=" mb-1 font-lato font-normal">Package</label>
-                                    <p class="text-lg font-lato font-bold mb-3">Gold Package</p>
+                                    <p id="confirmPackage" class="text-lg font-lato font-bold mb-3">Silver Package</p>
 
-                                    <label for="service" class="mb-1 font-lato font-normal">Additional Services</label>
-                                    <p class="text-lg font-lato font-bold mb-3">Custom Backdrop Red Carpet</p>
+                                    <label for="service" class="mb-1 font-lato font-normal">Additional Hours</label>
+                                    <p id="confirmAdditional_hours" class="text-lg font-lato font-bold mb-3">0</p>
 
                                     <label for="cost" class="mb-1 font-lato font-normal">Total Cost</label>
-                                    <p class="text-lg font-lato font-bold mb-3">$654</p>
+                                    <p id="confirmTotalCost" class="text-lg font-lato font-bold mb-3">${{ \App\Models\Booking::getPackageCost()['silver'] }}</p>
                                 </div>
                             </div>
                     
@@ -480,11 +482,11 @@
                                     <div class="flex lg:flex-row">
                                         <button type="button" onclick="prevStep()" class="rounded-full px-10 border border-[#f4845f] text-[#F4845F] bg-white lg:py-1 font-montserrat font-extrabold text-[12px]">BACK</button>
                             
-                                        <button id="confirmBookingButton" type="button" onclick="payment()" class="rounded-full lg:ml-5 ml-16 w-[100%] bg-[#F4845F] px-5 lg:py-1 lg:px-3 text-white font-montserrat font-extrabold text-[12px]">CONFIRM BOOKING</button>
+                                        <button id="confirmBookingButton" disabled type="submit" class="disabled:opacity-50 rounded-full lg:ml-5 ml-16 w-[100%] bg-[#F4845F] px-5 lg:py-1 lg:px-3 text-white font-montserrat font-extrabold text-[12px]">CONFIRM BOOKING</button>
                                     </div>
                                     <div class="flex flex-row justify-center items-center mt-3">
-                                        <input class="w-4 h-4 items-center mr-7" type="checkbox" name="Check" id="Check"/>
-                                        <p class="text-[12px] font-semibold font-lato">By clicking “Confirm Booking”, you agree to our terms of service and privacy policy.</p>
+                                        <input class="w-4 h-4 items-center mr-7" type="checkbox" name="check_confirm" id="check_confirm"/>
+                                        <p class="text-[12px] font-semibold font-lato">By clicking "Confirm Booking", you agree to our terms of service and privacy policy.</p>
                                     </div>
                                 </div> 
                             </div>
@@ -492,6 +494,54 @@
                     </div>
                 </div>
             </div>
+
+            <script>
+                const packages = {
+                    "silver": '{{ \App\Models\Booking::getPackageName()["silver"] }}',
+                    "gold": '{{ \App\Models\Booking::getPackageName()["gold"] }}',
+                    "platinum": '{{ \App\Models\Booking::getPackageName()["platinum"] }}',
+                }
+
+                const packageCost = {
+                    "silver": '{{ \App\Models\Booking::getPackageCost()["silver"] }}',
+                    "gold": '{{ \App\Models\Booking::getPackageCost()["gold"] }}',
+                    "platinum": '{{ \App\Models\Booking::getPackageCost()["platinum"] }}',
+                }
+                const costPerHour = {{ \App\Models\Booking::getCostPerHour() }}
+
+                function updateTotalCost() {
+                    const package = document.getElementById('package').value
+                    const additionalHours = parseInt(document.getElementById('additional_hours').value)
+                    document.getElementById('confirmTotalCost').textContent = `$${parseInt(packageCost[package]) + (parseInt(costPerHour) * additionalHours)}`
+                }
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    const formInputs = document.querySelectorAll('input, select, textarea');
+                    
+                    formInputs.forEach(input => {
+                        input.addEventListener('change', function() {
+                            const confirmId = 'confirm' + this.name.charAt(0).toUpperCase() + this.name.slice(1)
+                            const confirmElement = document.getElementById(confirmId);
+                            if (confirmId == "confirmPackage") {
+                                confirmElement.textContent = packages[this.value]
+                                updateTotalCost()
+                                return
+                            }
+                            if (confirmId == "confirmAdditional_hours") {
+                                confirmElement.textContent = this.value
+                                updateTotalCost()
+                                return
+                            }
+                            if (confirmElement) {
+                                confirmElement.textContent = this.value;
+                                updateTotalCost()
+                            }
+                        });
+                    });
+                });
+
+              
+            </script>
         </form>
 
         <footer class="flex flex-col">
@@ -546,6 +596,15 @@
             </div>
         </footer>
     </div>
+
+    <script>
+     
+        
+        // Function to update total cost (implement as needed)
+        //function updateTotalCost() {
+            // Implementation depends on how you want to calculate the total cost
+        //}
+        </script>
         
     <script src=/js/surround.js></script>
 
