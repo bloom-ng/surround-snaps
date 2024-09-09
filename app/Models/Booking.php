@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Booking extends Model
 {
@@ -36,8 +37,13 @@ class Booking extends Model
     public static $costPerHour = 200;
 
     public const STATUS_PENDING = "pending";
+    public const STATUS_BOOKED = "booked";
     public const STATUS_PAID = "paid";
     public const STATUS_CANCELLED = "cancelled";
+
+    public const BOOKING_FEE_AMOUNT = 100; // $100
+    public const BOOKING_FEE_AMOUNT_CENTS = 10000; // $100 in cents
+    public const BOOKING_FEE_CURRENCY = 'USD';
 
     public function getDurationHours()
     {
@@ -85,5 +91,19 @@ class Booking extends Model
         return static::$costPerHour;
     }
 
+    public static function conflictingBookings($eventDate, $eventStartTime, $durationHours)
+    {
+        $eventStart = Carbon::parse($eventDate . ' ' . $eventStartTime);
+        $eventEnd = $eventStart->copy()->addHours($durationHours);
 
+        return self::where('event_date', $eventDate)
+            ->where(function ($query) use ($eventStart, $eventEnd, $durationHours) {
+                $query->whereBetween('event_start_time', [$eventStart, $eventEnd])
+                    ->orWhere(function ($query) use ($eventStart, $eventEnd, $durationHours) {
+                        $query->where('event_start_time', '<=', $eventStart)
+                            ->whereRaw("ADDTIME(event_start_time, SEC_TO_TIME(? * 3600)) > ?", [$durationHours, $eventStart]);
+                    });
+            })
+            ->count();
+    }
 }

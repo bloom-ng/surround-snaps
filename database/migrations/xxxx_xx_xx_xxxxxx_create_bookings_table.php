@@ -25,7 +25,7 @@ class CreateBookingsTable extends Migration
             $table->string('package');
             $table->json('additional_hours')->nullable();
             $table->decimal('total_cost', 8, 2);
-            $table->enum('status', ['pending', 'paid', 'cancelled'])->default('pending');
+            $table->enum('status', ['pending', 'booked', 'paid', 'cancelled'])->default('pending');
             $table->timestamps();
         });
     }

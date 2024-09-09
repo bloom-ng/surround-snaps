@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Transaction;
+use App\Services\SquarePaymentService;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -15,7 +17,7 @@ class BookingController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, SquarePaymentService $squarePaymentService)
     {
         $validatedData = $request->validate([
             'full_name' => 'required|string|max:255',
@@ -36,25 +38,16 @@ class BookingController extends Controller
             'special_instructions' => 'nullable|string',
             'package' => 'required|string|in:silver,gold,platinum',
             'additional_hours' => 'nullable|integer|in:0,1,2,3',
-            // 'total_cost' => 'required|numeric',
         ]);
 
         $booking = new Booking($validatedData);
         $durationHours = $booking->getDurationHours();
 
-        // Check for conflicting events
-        $eventStart = Carbon::parse($validatedData['event_date'] . ' ' . $validatedData['event_start_time']);
-        $eventEnd = $eventStart->copy()->addHours($durationHours);
-
-        $conflictingBookings = Booking::where('event_date', $validatedData['event_date'])
-            ->where(function ($query) use ($eventStart, $eventEnd, $durationHours) {
-                $query->whereBetween('event_start_time', [$eventStart, $eventEnd])
-                    ->orWhere(function ($query) use ($eventStart, $eventEnd, $durationHours) {
-                        $query->where('event_start_time', '<=', $eventStart)
-                            ->whereRaw("ADDTIME(event_start_time, SEC_TO_TIME($durationHours * 3600)) > ?", [$eventStart]);
-                    });
-            })
-            ->count();
+        $conflictingBookings = Booking::conflictingBookings(
+            $validatedData['event_date'],
+            $validatedData['event_start_time'],
+            $durationHours
+        );
 
         if ($conflictingBookings > 0) {
             return back()->withErrors(['event_date' => 'The selected date and time conflicts with an existing booking. Please choose a different time.'])->withInput();
@@ -65,8 +58,51 @@ class BookingController extends Controller
 
         $booking->save();
 
-        // For now, we'll redirect to the payment page
-        return redirect()->route('payment')->with('booking_id', $booking->id);
+        try {
+            // Search or create customer
+            $customer = $squarePaymentService->searchCustomer($booking->email);
+
+            if (empty($customer) || $customer == null) {
+                $customer = $squarePaymentService->createCustomer(
+                    $booking->email,
+                    $booking->full_name,
+                    // $booking->contact_number
+                );
+            }
+
+
+            // Create checkout for booking fee
+            $checkout = $squarePaymentService->createQuickPayCheckout(
+                Booking::BOOKING_FEE_AMOUNT_CENTS,
+                Booking::BOOKING_FEE_CURRENCY,
+                route('payment.success', ['booking' => $booking->id])
+                // "https://9b25-105-112-238-84.ngrok-free.app/payment/success/" . $booking->id
+            );
+
+            // Create transaction record
+            Transaction::create([
+                'booking_id' => $booking->id,
+                'square_customer_id' => $customer->getId(),
+                'square_payment_id' => $checkout->getOrderId(),
+                'amount' => Booking::BOOKING_FEE_AMOUNT,
+                'status' => Transaction::STATUS_PENDING,
+                'type' => Transaction::TYPE_BOOKING_FEE,
+            ]);
+
+
+            return redirect($checkout->getUrl());
+        } catch (\Exception $e) {
+            dd($e);
+            // Log the error
+            \Log::error('Payment initiation failed: ' . $e->getMessage());
+
+            // Delete the booking if payment initiation fails
+            $booking->delete();
+
+            // Redirect back to the booking page with an error message
+            return redirect()->route('booking.index')
+                ->with('error', 'There was an error initiating the payment. Please try again or contact support.');
+        }
     }
 
     public function checkAvailability(Request $request)
@@ -89,18 +125,11 @@ class BookingController extends Controller
         ]);
         $durationHours = $booking->getDurationHours();
 
-        $eventStart = Carbon::parse($request->event_date . ' ' . $request->event_start_time);
-        $eventEnd = $eventStart->copy()->addHours($durationHours);
-
-        $conflictingBookings = Booking::where('event_date', $request->event_date)
-            ->where(function ($query) use ($eventStart, $eventEnd, $durationHours) {
-                $query->whereBetween('event_start_time', [$eventStart, $eventEnd])
-                    ->orWhere(function ($query) use ($eventStart, $eventEnd, $durationHours) {
-                        $query->where('event_start_time', '<=', $eventStart)
-                            ->whereRaw("ADDTIME(event_start_time, SEC_TO_TIME($durationHours * 3600)) > ?", [$eventStart]);
-                    });
-            })
-            ->count();
+        $conflictingBookings = Booking::conflictingBookings(
+            $request->event_date,
+            $request->event_start_time,
+            $durationHours
+        );
 
         return response()->json(['available' => $conflictingBookings === 0]);
     }
