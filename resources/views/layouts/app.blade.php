@@ -139,5 +139,7 @@
     </script>
     <script src="/js/surround.js"></script>
     <script src="/js/pricing.js"></script>
+
+    @yield('additional_scripts')
 </body>
 </html>
