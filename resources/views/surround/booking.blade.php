@@ -42,7 +42,7 @@
                             <input type="text" name="full_name" id="full_name"
                                 class="rounded-full px-5 py-[8px] lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5 lg:text-sm text-[9px]"
                                 placeholder="Required for personalization and contact."
-                                required>
+                                value="{{ old('full_name') }}">
                         </div>
                 
                         <div class="flex flex-col">
@@ -50,7 +50,7 @@
                             <input type="text" name="contact_number" id="contact_number"
                                 class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic mb-3 lg:mb-5 lg:text-sm text-[9px]"
                                 placeholder="Needed for further communication or last-minute notification."
-                                required>
+                                value="{{ old('contact_number') }}">
                         </div>
                 
                         <div class="flex flex-col">
@@ -58,7 +58,7 @@
                             <input type="text" name="email" id="email"
                                 class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic lg:text-sm text-[9px]"
                                 placeholder="For sending booking confirmations and promotional offers."
-                                required>
+                                value="{{ old('email') }}">
                         </div>
 
                         <div class="flex flex-col mt-3">
@@ -66,7 +66,7 @@
                             <input type="text" name="event_type" id="event_type"
                                 class="rounded-full px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5"
                                 placeholder="Allows us to prepare the appropriate setup and offers tailored to specific events."
-                                required>
+                                 value="{{ old('event_type') }}">
                         </div>
 
                         <div class="flex flex-col text-sm">
@@ -78,7 +78,8 @@
                                     class="rounded-full border py-[8px] text-[10px] lg:text-sm px-5 lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                     placeholder="To check availability."
                                     min="{{ date('Y-m-d', strtotime('+1 week')) }}"
-                                    required>
+                                    value="{{ old('event_date') }}"
+                                    >
                             
                                 <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class=" hidden mt-2 lg:ml-[1100px] ml-[240px] absolute">
                                     <rect width="26" height="26" fill="url(#pattern0_1963_359)"/>
@@ -98,7 +99,8 @@
                                 <input type="time" name="event_start_time" id="event_start_time"
                                     class="rounded-full border px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                     placeholder="For scheduling purposes."
-                                    required>
+                                    value="{{ old('event_start_time') }}"
+                                    >
                             
                                 <svg width="16" height="16" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="hidden mt-2 lg:ml-[1100px] ml-[240px] absolute">
                                     <rect width="26" height="26" fill="url(#pattern0_1963_360)"/>
@@ -153,7 +155,8 @@
                                 <input type="text" name="venue_address" id="venue_address"
                                     class="rounded-full px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border border-orange-300 placeholder:italic mb-5"
                                     placeholder="For planning logistics and assessing travel requirements."
-                                    required>
+                                    value="{{ old('venue_address') }}"
+                                    >
                             </div>
                     
                             <div class="flex flex-col text-sm">
@@ -162,8 +165,9 @@
                                     <input type="text" name="venue_type" id="venue_type"
                                         class="rounded-full border py-[8px] text-[10px] lg:text-sm px-5 lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                         placeholder="Helps in preparing necessary equipment and contingency plans."
-                                        required>
-                                    </div>          
+                                        value="{{ old('venue_type') }}"
+                                        >
+                                    </div>
                             </div>
                     
                             <div class="flex flex-col text-sm">
@@ -172,7 +176,8 @@
                                     <input type="text" name="contact_person" id="contact_person"
                                         class="rounded-full border px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                         placeholder="Point of contact on the day of the event"
-                                        required>
+                                        value="{{ old('contact_person') }}"
+                                        >
                                 </div>   
                             </div>
             
@@ -182,19 +187,22 @@
                                     <input type="text" name="contact_person_phone" id="contact_person_phone"
                                         class="rounded-full border px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                         placeholder="Point of contact on the day of the event"
-                                        required>       
+                                        value="{{ old('contact_person_phone') }}"
+                                        >       
                                 </div>   
                             </div>
 
                             <div class="flex flex-col lg:mt-4 mt-0">
                                 <label for="event_theme" class="mb-1 ml-5 font-lato font-normal text-sm">Does your event require a specific theme</label>
                                 <textarea rows="10" name="event_theme" id="event_theme" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] placeholder:italic" 
-                                placeholder="Any information about the theme of the event."></textarea>
+                                placeholder="Any information about the theme of the event."
+                                >{{ old('event_theme') }}</textarea>
                             </div>
                             <div class="flex flex-col lg:mt-4 mt-0">
                                 <label for="special_instructions" class="mb-1 ml-5 font-lato font-normal text-sm">Special Instructions or Requests</label>
                                 <textarea rows="10" name="special_instructions" id="special_instructions" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] placeholder:italic" 
-                                placeholder="Field for anything specific the client needs, like theme-based props or accessibility considerations."></textarea>
+                                placeholder="Field for anything specific the client needs, like theme-based props or accessibility considerations."
+                                >{{ old('special_instructions') }}</textarea>
                             </div>
                     
                             <div class="flex flex-col justify-center font-lato font-normal lg:flex-row w-full mt-10">
@@ -473,6 +481,13 @@
 
                 document.addEventListener('DOMContentLoaded', () => {
                     const formInputs = document.querySelectorAll('input, select, textarea');
+                    setTimeout(() => {
+                        formInputs.forEach(input => {
+                            const event = new Event('change', { bubbles: true });
+                            input.value = input.value; // Ensure the value is set
+                            input.dispatchEvent(event);
+                        });
+                    }, 1000);
                     
                     formInputs.forEach(input => {
                         input.addEventListener('change', function() {
@@ -505,4 +520,53 @@
             <script src="/js/step.js"></script>
             <script src="/js/checkbox.js"></script>
             <script src="/js/booking.js"></script>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const eventDateInput = document.getElementById('event_date');
+                    const eventStartTimeInput = document.getElementById('event_start_time');
+        
+                    function checkAvailability() {
+                        const eventDate = eventDateInput.value;
+                        const eventStartTime = eventStartTimeInput.value;
+        
+                        if (eventDate && eventStartTime) {
+                            fetch('{{ route('booking.checkAvailability') }}', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                },
+                                body: JSON.stringify({
+                                    event_date: eventDate,
+                                    event_start_time: eventStartTime
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (!data.available) {
+                                    toastr.error("Sorry, this time slot is not available. Please choose another time.", "", {
+                                        timeOut: 3000,
+                                        closeButton: true,
+                                        positionClass: "toast-top-center",
+                                        backgroundColor: "#F4845F"
+                                    });
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                toastr.error("An error occurred while checking availability. Please try again.", "", {
+                                    timeOut: 3000,
+                                    closeButton: true,
+                                    positionClass: "toast-top-center",
+                                    backgroundColor: "#F4845F"
+                                });
+                            });
+                        }
+                    }
+        
+                    eventDateInput.addEventListener('change', checkAvailability);
+                    eventStartTimeInput.addEventListener('change', checkAvailability);
+                });
+            </script>
         @endsection

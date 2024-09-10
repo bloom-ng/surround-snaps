@@ -37,7 +37,7 @@ class BookingController extends Controller
             'event_theme' => 'nullable|string',
             'special_instructions' => 'nullable|string',
             'package' => 'required|string|in:silver,gold,platinum',
-            'additional_hours' => 'nullable|integer|in:0,1,2,3',
+            'additional_hours' => 'required|integer|in:0,1,2,3',
         ]);
 
         $booking = new Booking($validatedData);
@@ -112,16 +112,13 @@ class BookingController extends Controller
                 'required',
                 'date',
                 'after:today',
-                'before:' . now()->addWeek()->toDateString(),
             ],
             'event_start_time' => 'required|date_format:H:i',
-            'package' => 'required|string|in:silver,gold,platinum',
-            'additional_hours' => 'nullable|integer|in:0,1,2,3',
         ]);
 
         $booking = new Booking([
-            'package' => $request->package,
-            'additional_hours' => $request->additional_hours ?? 0,
+            'package' => 'platinum',
+            'additional_hours' => 3,
         ]);
         $durationHours = $booking->getDurationHours();
 

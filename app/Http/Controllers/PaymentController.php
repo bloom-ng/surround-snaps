@@ -12,52 +12,55 @@ class PaymentController extends Controller
     public function handlePaymentSuccess(Request $request, SquarePaymentService $squarePaymentService, Booking $booking)
     {
         try {
-            // Verify payment status with Square
-            // $paymentId = $request->query('transactionId');
-            // $paymentId = $request->query('txnId');
-            // $paymentStatus = $squarePaymentService->getOrder($paymentId);
+            // Retrieve the booking fee transaction
+            $bookingFeeTransaction = Transaction::where('booking_id', $booking->id)
+                ->where('type', Transaction::TYPE_BOOKING_FEE)
+                ->first();
 
-            // if ($paymentStatus === 'COMPLETED') {
-                // Update booking status
-                $booking->update(['status' => Booking::STATUS_BOOKED]);
+            if (!$bookingFeeTransaction) {
+                \Log::error('Booking fee transaction not found for booking:', ['id' => $booking->id]);
+                return redirect()->route('booking.index')->with('error', 'Unable to process payment. Please contact support.');
+            }
 
-                // Update transaction status
-                Transaction::where('booking_id', $booking->id)
-                    ->where('type', Transaction::TYPE_BOOKING_FEE)
-                    ->update(['status' => Transaction::STATUS_COMPLETED]);
+            \Log::info('Transaction details:', [
+                'booking_id' => $booking->id, 
+                'square_customer_id' => $bookingFeeTransaction->square_customer_id
+            ]);
 
-                // Calculate remaining amount
-                $remainingAmount = $booking->total_cost - Booking::BOOKING_FEE_AMOUNT;
+            // Update booking status
+            $booking->update(['status' => Booking::STATUS_BOOKED]);
 
-                // Create invoice for remaining amount
-                $invoiceId = $squarePaymentService->createInvoice(
-                    $booking->square_customer_id,
-                    [
-                        'description' => 'Remaining balance for ' . Booking::getPackageName()[$booking->package],
-                        'amount' => $remainingAmount,
-                        'currency' => Booking::BOOKING_FEE_CURRENCY,
-                        'dueDate' => $booking->event_date->subDays(5)->format('Y-m-d')
-                    ]
-                );
+            // Update transaction status
+            $bookingFeeTransaction->update(['status' => Transaction::STATUS_COMPLETED]);
 
-                // Create transaction record for the remaining amount
-                Transaction::create([
-                    'booking_id' => $booking->id,
-                    'square_customer_id' => $booking->square_customer_id,
-                    'square_payment_id' => $invoiceId,
+            // Calculate remaining amount
+            $remainingAmount = $booking->total_cost - Booking::BOOKING_FEE_AMOUNT;
+
+            // Create invoice for remaining amount
+            $invoiceId = $squarePaymentService->createInvoice(
+                $bookingFeeTransaction->square_customer_id,
+                [
+                    'description' => 'Remaining balance for ' . Booking::getPackageName()[$booking->package],
                     'amount' => $remainingAmount,
-                    'status' => Transaction::STATUS_PENDING,
-                    'type' => Transaction::TYPE_FULL_PAYMENT,
-                ]);
+                    'currency' => Booking::BOOKING_FEE_CURRENCY,
+                    'dueDate' => $booking->event_date->subDays(5)->format('Y-m-d')
+                ]
+            );
 
-                // Redirect to thank you page with success message
-                return redirect()->route('payment.thank-you')->with([
-                    'success' => 'Payment successful! An invoice for the remaining balance has been sent.'
-                ]);
-            // } else {
-            //     // Payment was not successful
-            //     return redirect()->route('booking.index')->with('error', 'Payment was not successful. Please try again.');
-            // }
+            // Create transaction record for the remaining amount
+            Transaction::create([
+                'booking_id' => $booking->id,
+                'square_customer_id' => $bookingFeeTransaction->square_customer_id,
+                'square_payment_id' => $invoiceId,
+                'amount' => $remainingAmount,
+                'status' => Transaction::STATUS_PENDING,
+                'type' => Transaction::TYPE_FULL_PAYMENT,
+            ]);
+
+            // Redirect to thank you page with success message
+            return redirect()->route('payment.thank-you')->with([
+                'success' => 'Payment successful! An invoice for the remaining balance has been sent.'
+            ]);
         } catch (\Exception $e) {
             // Log the error
             \Log::error('Payment success handling failed: ' . $e->getMessage());

@@ -140,7 +140,7 @@ class SquarePaymentService
         }
     }
 
-    public function createOrder($amount, $customerId, $currency)
+    public function createOrder($customerId, $amount, $currency)
     {
         $base_price_money = new \Square\Models\Money();
         $base_price_money->setAmount($amount);
