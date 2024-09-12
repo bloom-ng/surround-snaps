@@ -34,7 +34,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/booking', function () {
-    return view('surround.contact');
+    return view('surround.booking');
 });
 Route::get('/payment', function () {
     return view('surround.payment');
