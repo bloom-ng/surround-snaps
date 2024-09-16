@@ -130,4 +130,27 @@ class BookingController extends Controller
 
         return response()->json(['available' => $conflictingBookings === 0]);
     }
+
+    public function indexAdmin()
+    {
+        $bookings = Booking::query()->when(request()->query('search', '') != '', function ($query) {
+            $query->where('full_name', 'like', '%' . request()->query('search') . '%');
+            $query->where('contact_number', 'like', '%' . request()->query('search') . '%');
+            $query->where('email', 'like', '%' . request()->query('search') . '%');
+            $query->where('package', 'like', '%' . request()->query('search') . '%');
+            $query->where('event_date', 'like', '%' . request()->query('search') . '%');
+            $query->where('event_type', 'like', '%' . request()->query('search') . '%');
+            $query->where('status', 'like', '%' . request()->query('search') . '%');
+            return $query;
+        })
+            ->latest()
+            ->paginate();
+        return view('admin.booking.index', compact('bookings'));
+    }
+
+    public function view(Booking $booking)
+    {
+        $transactions = Transaction::where('booking_id', $booking->id)->get();
+        return view('admin.booking.view', compact('booking', 'transactions'));
+    }
 }

@@ -12,12 +12,12 @@ class GalleryController extends Controller
     public function index()
     {
         $galleries = Gallery::query()
-                                ->when(request()->query('search','') != '', function ($query) {
-                                    $query->where('name', 'like', '%' . request()->query('search') . '%');
-                                    return $query;
-                                })
-                                ->latest()
-                                ->paginate();
+            ->when(request()->query('search', '') != '', function ($query) {
+                $query->where('title', 'like', '%' . request()->query('search') . '%');
+                return $query;
+            })
+            ->latest()
+            ->paginate();
 
         return view('admin.gallery.index', ['galleries' => $galleries]);
     }
@@ -37,13 +37,13 @@ class GalleryController extends Controller
         $request->validate([
             'title' => 'nullable',
 
-           
+
         ]);
-        
+
         $gallery = new Gallery;
         if ($request->hasFile('doc')) {
             $url = $request->file('doc');
-            $path = $request->file('doc')->storeAs('public/galleries', rand(1000,9999) .  $url->getClientOriginalName());
+            $path = $request->file('doc')->storeAs('public/galleries', rand(1000, 9999) .  $url->getClientOriginalName());
             $gallery->url = $path;
         }
         $gallery->title = $request->title ?? '...';
@@ -52,19 +52,18 @@ class GalleryController extends Controller
         $gallery->save();
 
         return back()->with('success', 'Media Added');
-        
     }
 
     public function update(Request $request, Gallery $gallery)
     {
         $request->validate([
             'title' => 'nullable',
-            
+
         ]);
-        
+
         if ($request->hasFile('doc')) {
             $url = $request->file('doc');
-            $path = $request->file('doc')->storeAs('public/galleries', rand(1000,9999) . $url->getClientOriginalName());
+            $path = $request->file('doc')->storeAs('public/galleries', rand(1000, 9999) . $url->getClientOriginalName());
             $gallery->url = $path;
         }
         $gallery->title = $request->title ?? '...';
@@ -73,7 +72,6 @@ class GalleryController extends Controller
         $gallery->save();
 
         return back()->with('success', 'Media Updated');
-        
     }
 
     public function destroy(Gallery $gallery)

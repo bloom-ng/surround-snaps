@@ -13,30 +13,30 @@ class UserController extends Controller
     public function index()
     {
         $users = User::query()
-                        ->when(request()->query('search','') != '', function ($query) {
-                            $query->where('name', 'like', '%' . request()->query('search') . '%');
-                            $query->orWhere('email', 'like', '%' . request()->query('search') . '%');
-                            return $query;
-                        })
-                        ->latest()
-                        ->paginate(20);
-        return view('admin.user.index', ['users' => $users]);
+            ->when(request()->query('search', '') != '', function ($query) {
+                $query->where('name', 'like', '%' . request()->query('search') . '%');
+                $query->orWhere('email', 'like', '%' . request()->query('search') . '%');
+                return $query;
+            })
+            ->latest()
+            ->paginate(20);
+        return view('admin.admins.index', ['users' => $users]);
     }
 
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.admins.create');
     }
 
     public function me()
     {
-        return view('admin.user.edit', ['user' => auth()->user()]);
+        return view('admin.admins.edit', ['user' => auth()->user()]);
     }
 
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.user.edit', ['user' => $user]);
+        return view('admin.admins.edit', ['user' => $user]);
     }
 
     public function store(Request $request)
@@ -44,12 +44,15 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|string',
             'email' => 'required|email',
-            'password' => ['required', 'confirmed', Password::min(8)
-                                                        ->letters()
-                                                        ->mixedCase()
-                                                        ->numbers()
-                                                        ->symbols()
-                        ],
+            'password' => [
+                'required',
+                'confirmed',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols()
+            ],
         ]);
 
         $user = new User;
@@ -65,12 +68,15 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|string',
             'email' => 'required|email',
-            'password' => ['nullable', 'confirmed', Password::min(8)
-                                                        ->letters()
-                                                        ->mixedCase()
-                                                        ->numbers()
-                                                        ->symbols()
-                        ],
+            'password' => [
+                'nullable',
+                'confirmed',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols()
+            ],
         ]);
 
         $user = User::find($id);
