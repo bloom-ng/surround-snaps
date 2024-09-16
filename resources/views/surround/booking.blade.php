@@ -40,33 +40,33 @@
                         <div class="flex flex-col">
                             <label for="full_name" class="mb-1 ml-5 font-lato font-normal text-sm">Full Name</label>
                             <input type="text" name="full_name" id="full_name"
-                                class="rounded-full px-5 py-[8px] lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5 lg:text-sm text-[9px]"
-                                placeholder="Required for personalization and contact."
-                                value="{{ old('full_name') }}">
+                            class="rounded-full px-5 py-[8px] lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5 lg:text-sm text-[9px]"
+                            placeholder="Required for personalization and contact."
+                            value="{{ old('full_name') }}">
                         </div>
                 
                         <div class="flex flex-col">
                             <label for="contact_number" class="mb-1 ml-5 font-lato font-normal text-sm">Contact Number</label>
                             <input type="text" name="contact_number" id="contact_number"
-                                class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic mb-3 lg:mb-5 lg:text-sm text-[9px]"
-                                placeholder="Needed for further communication or last-minute notification."
-                                value="{{ old('contact_number') }}">
+                            class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic mb-3 lg:mb-5 lg:text-sm text-[9px]"
+                            placeholder="Needed for further communication or last-minute notification."
+                            value="{{ old('contact_number') }}">
                         </div>
                 
                         <div class="flex flex-col">
                             <label for="email" class="mb-1 ml-5 font-lato font-normal text-sm">Email Address</label>
                             <input type="text" name="email" id="email"
-                                class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic lg:text-sm text-[9px]"
-                                placeholder="For sending booking confirmations and promotional offers."
-                                value="{{ old('email') }}">
+                            class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic lg:text-sm text-[9px]"
+                            placeholder="For sending booking confirmations and promotional offers."
+                            value="{{ old('email') }}">
                         </div>
 
                         <div class="flex flex-col mt-3">
                             <label for="event_type" class="mb-1 ml-5 font-lato font-normal text-sm">Event Type (e.g., Wedding, Corporate Event, Birthday Party, etc)</label>
                             <input type="text" name="event_type" id="event_type"
-                                class="rounded-full px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5"
-                                placeholder="Allows us to prepare the appropriate setup and offers tailored to specific events."
-                                 value="{{ old('event_type') }}">
+                            class="rounded-full px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5"
+                            placeholder="Allows us to prepare the appropriate setup and offers tailored to specific events."
+                            value="{{ old('event_type') }}">
                         </div>
 
                         <div class="flex flex-col text-sm">
@@ -114,18 +114,18 @@
                             </div>   
                         </div>
                 
-                        <div class="flex lg:flex-row flex-col justify-between mt-3 lg:mt-10">
+                        <div class="flex lg:flex-row md:flex-row flex-col justify-between mt-3 lg:mt-10">
                             <div class="flex flex-col font-lato font-normal">
                                 <p>1 of 4</p>
-                                <svg width="300" height="5" viewBox="0 0 400 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="300" height="5" viewBox="0 0 400 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
                                     <rect width="400" height="5" fill="#D9D9D9"/>
                                     <rect width="100" height="5" fill="#F4845F"/>
                                 </svg>
-
                             </div>
-                
-                            <button type="button" onclick="nextStep()" class="rounded-full w-20 ml-[220px] lg:ml-0 px-7 py-1 lg:mt-0 mt-3 bg-[#F4845F] flex justify-center text-center text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
-                        </div>
+                            <div class="flex justify-end items-end">
+                                <button type="button" onclick="nextStep()" class="rounded-full w-20 px-7 py-1 text-center lg:mt-0 mt-3 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
+                            </div>
+                        </div>     
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                                         placeholder="Helps in preparing necessary equipment and contingency plans."
                                         value="{{ old('venue_type') }}"
                                         >
-                                    </div>
+                                    </div>          
                             </div>
                     
                             <div class="flex flex-col text-sm">
@@ -205,10 +205,10 @@
                                 >{{ old('special_instructions') }}</textarea>
                             </div>
                     
-                            <div class="flex flex-col justify-center font-lato font-normal lg:flex-row w-full mt-10">
-                                <div class="flex flex-col w-3/4">
+                            <div class="flex flex-col justify-between font-lato font-normal lg:flex-row md:flex-row w-full mt-10">
+                                <div class="flex flex-col">
                                     <p>2 of 4</p>
-                                    <svg width="300" height="5" viewBox="0 0 400 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="300" height="5" viewBox="0 0 400 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
                                         <rect width="400" height="5" fill="#D9D9D9"/>
                                         <rect width="200" height="5" fill="#F4845F"/>
                                     </svg>
@@ -216,12 +216,13 @@
                                 </div>
             
                                 <div class="flex flex-col lg:items-end lg:w-1/4 mt-3">
-                                    <div class="flex lg:flex-row">
+                                    <div class="flex lg:flex-row justify-between lg:justify-end">
                                         <button type="button" onclick="prevStep()" class="rounded-full px-7 py-1 border border-[#f4845f] text-[#F4845F] bg-white font-montserrat font-extrabold text-[12px]">BACK</button>
                             
-                                        <button type="button" onclick="nextStep()" class="rounded-full lg:ml-5 ml-[120px] px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
+                                        <button type="button" onclick="nextStep()" class="rounded-full lg:ml-5 px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
                                     </div>
                                 </div> 
+
                             </div>
                         </div>
                     </div>
@@ -313,8 +314,6 @@
                            <h1 class="mt-5 text-xl font-normal font-lato ml-10">Additional services</h1>
 
                            <div class="flex flex-col mt-5 px-5 lg:px-10 py-10 lg:py-14 bg-[#FFF5F1] w-full lg:w-[80%]">
-                               
-
                                 <div class="flex justify-between flex-row mt-3 font-normal font-lato">
                                     <p class="text-lg">1 Additional hour</p>
                                     <p class="text-lg">$200</p>
@@ -328,19 +327,19 @@
                                     <div data-item="additional_hours" data-value="2" class="inner-circle tap-box w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer transition-bg mt-1">
                                     </div>
                                 </div>
+
                                 <div class="flex justify-between flex-row mt-3 font-normal font-lato">
                                     <p class="text-lg">3 Additional hours</p>
                                     <p class="text-lg mr-1">$600</p>
                                     <div data-item="additional_hours" data-value="3" class="inner-circle tap-box w-[20px] h-[20px] rounded-full border border-[#F4845F] flex items-center justify-center cursor-pointer transition-bg mt-1">
                                     </div>
                                 </div>
-
                            </div>
                     
-                           <div class="flex flex-col justify-center lg:flex-row w-full mt-10">
-                                <div class="flex flex-col w-3/4">
+                           <div class="flex flex-col justify-between lg:flex-row md:flex-row w-full mt-10">
+                                <div class="flex flex-col">
                                     <p>3 of 4</p>
-                                    <svg width="300" height="5" viewBox="0 0 400 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="300" height="5" viewBox="0 0 400 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
                                         <rect width="400" height="5" fill="#D9D9D9"/>
                                         <rect width="300" height="5" fill="#F4845F"/>
                                     </svg>
@@ -349,10 +348,10 @@
                                 </div>
             
                                 <div class="flex flex-col lg:items-end lg:w-1/4 mt-3">
-                                    <div class="flex lg:flex-row">
+                                    <div class="flex lg:flex-row justify-between lg:justify-end">
                                         <button type="button" onclick="prevStep()" class="rounded-full px-7 py-1 border border-[#f4845f] text-[#F4845F] bg-white font-montserrat font-extrabold text-[12px]">BACK</button>
                             
-                                        <button type="button" onclick="nextStep()" class="rounded-full lg:ml-5 ml-[120px] px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
+                                        <button type="button" onclick="nextStep()" class="rounded-full lg:ml-5 px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
                                     </div>
                                 </div> 
                             </div>
@@ -434,22 +433,22 @@
                             </div>
                     
                         <div class="flex flex-col justify-center lg:flex-row w-full mt-10">
-                                <div class="flex flex-col w-3/4 font-lato font-normal">
+                                <div class="flex flex-col font-lato font-normal">
                                     <p>4 of 4</p>
-                                    <svg width="300" height="5" viewBox="0 0 300 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="300" height="5" viewBox="0 0 300 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
                                         <rect width="300" height="5" fill="#D9D9D9"/>
                                         <rect width="300" height="5" fill="#F4845F"/>
                                     </svg>                                     
                                 </div>
             
                                 <div class="flex flex-col lg:items-end lg:w-1/4 mt-3">
-                                    <div class="flex lg:flex-row">
-                                        <button type="button" onclick="prevStep()" class="rounded-full px-10 border border-[#f4845f] text-[#F4845F] bg-white lg:py-1 font-montserrat font-extrabold text-[12px]">BACK</button>
+                                    <div class="flex lg:flex-row justify-between lg:justify-end">
+                                        <button type="button" onclick="prevStep()" class="rounded-full px-7 py-1 border border-[#f4845f] text-[#F4845F] bg-white font-montserrat font-extrabold text-[12px]">BACK</button>
                             
-                                        <button id="confirmBookingButton" disabled type="submit" class="disabled:opacity-50 rounded-full lg:ml-5 ml-16 w-[100%] bg-[#F4845F] px-5 lg:py-1 lg:px-3 text-white font-montserrat font-extrabold text-[12px]">CONFIRM BOOKING</button>
+                                        <button id="confirmBookingButton" disabled type="submit" class="disabled:opacity-50 rounded-full lg:ml-5 bg-[#F4845F] px-5 lg:py-1 lg:px-3 text-white font-montserrat font-extrabold text-[12px]">CONFIRM BOOKING</button>
                                     </div>
                                     <div class="flex flex-row justify-center items-center mt-3">
-                                        <input class="w-4 h-4 items-center mr-7" type="checkbox" name="check_confirm" id="check_confirm"/>
+                                        <input class="w-4 h -4 items-center mr-7" type="checkbox" name="check_confirm" id="check_confirm"/>
                                         <p class="text-[12px] font-semibold font-lato">By clicking "Confirm Booking", you agree to our terms of service and privacy policy.</p>
                                     </div>
                                 </div> 
@@ -525,11 +524,11 @@
                 document.addEventListener('DOMContentLoaded', function() {
                     const eventDateInput = document.getElementById('event_date');
                     const eventStartTimeInput = document.getElementById('event_start_time');
-        
+
                     function checkAvailability() {
                         const eventDate = eventDateInput.value;
                         const eventStartTime = eventStartTimeInput.value;
-        
+
                         if (eventDate && eventStartTime) {
                             fetch('{{ route('booking.checkAvailability') }}', {
                                 method: 'POST',
@@ -564,7 +563,7 @@
                             });
                         }
                     }
-        
+
                     eventDateInput.addEventListener('change', checkAvailability);
                     eventStartTimeInput.addEventListener('change', checkAvailability);
                 });
