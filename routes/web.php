@@ -39,6 +39,10 @@ Route::get('/contact', function () {
     return view('surround.contact');
 });
 
+Route::get('/terms', function () {
+    return view('surround.terms');
+});
+
 Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
 Route::post('/booking/check-availability', [BookingController::class, 'checkAvailability'])->name('booking.checkAvailability');
