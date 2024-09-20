@@ -86,7 +86,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     // User routes
     Route::get('/admins', [UserController::class, 'index']);
     Route::get('/admins/{id}/edit', [UserController::class, 'edit']);
-    Route::get('/admins/{id}', [UserController::class, 'show']);
+    // Route::get('/admins/{id}', [UserController::class, 'show']);
     Route::put('/admins/{id}', [UserController::class, 'update']);
     Route::post('/admins', [UserController::class, 'store']);
     Route::get('/admins/create', [UserController::class, 'create']);
