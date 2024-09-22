@@ -22,7 +22,7 @@
                         <div class="flex justify-center items-center">
                             <a href="/">
                                 <svg width="20" height="20" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <rect width="50" height="50" fill="url(#pattern0_1963_324)" />
+                                   <rect width="50" height="50" fill="url(#pattern0_1963_324)" />
                                     <defs>
                                         <pattern id="pattern0_1963_324" patternContentUnits="objectBoundingBox" width="1" height="1">
                                             <use xlink:href="#image0_1963_324" transform="scale(0.0111111)" />
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 
-                    <div class="flex flex-col bg-white rounded-2xl mb-5 px-14 py-7 w-full">
+                    <div class="flex flex-col bg-white rounded-2xl mb-5 lg:px-14 px-5 py-7 w-full">
                         <h1 class="mb-3 text-[#F4845F] text-2xl lg:text-3xl font-lato font-extrabold">Basic Information & Booking Details</h1>
                 
                         <div class="flex flex-col">
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                     
-                        <div class="flex flex-col bg-white rounded-2xl mb-5 px-14 py-7 w-full">
+                        <div class="flex flex-col bg-white rounded-2xl mb-5 lg:px-14 px-5 py-7 w-full">
                             <h1 class="mb-3 text-[#F4845F] text-2xl lg:text-3xl font-lato font-extrabold">Location and Logistics</h1>                    
                             <div class="flex flex-col">
                                 <label for="venue_address" class="mb-1 ml-5 font-lato font-normal text-sm">Venue Address</label>
@@ -247,7 +247,7 @@
                             </div>
                         </div>
                     
-                        <div class="flex flex-col bg-white rounded-2xl mb-5 px-14 py-7 w-full">
+                        <div class="flex flex-col bg-white rounded-2xl mb-5 lg:px-14 px-5 py-7 w-full">
                             <h1 class="mb-3 text-[#F4845F] text-3xl font-lato font-extrabold">Service Selection</h1>
                     
                            <div  class=" flex lg:flex-row flex-col bg items-center justify-between">
@@ -378,7 +378,7 @@
                             </div>
                         </div>
                     
-                        <div class="flex flex-col bg-white rounded-2xl mb-5 px-14 py-7 w-full">
+                        <div class="flex flex-col bg-white rounded-2xl mb-5 lg:px-14 px-5 py-7 w-full">
                             <h1 class="mb-3 text-[#F4845F] text-3xl font-lato font-extrabold">Please Confirm Every Detail</h1>
 
                             <div class="flex flex-row w-full">
@@ -421,7 +421,7 @@
                                     <label for="package" class=" mb-1 font-lato font-normal">Special Request</label>
                                     <p id="confirmSpecial_instructions" class="text-lg font-lato font-bold mb-3"></p>
 
-                                    <label for="package" class=" mb-1 font-lato font-normal">Package</label>
+                                    <label for="package" class=" mb-1 font-lato font-normal">Package</label>/
                                     <p id="confirmPackage" class="text-lg font-lato font-bold mb-3">Silver Package</p>
 
                                     <label for="service" class="mb-1 font-lato font-normal">Additional Hours</label>
