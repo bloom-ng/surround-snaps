@@ -1,42 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Terms of Service')
+@section('title', 'Privacy Policy')
 
 @section('content')
 
         <div class="flex-col bg-[#1b998b] justify-center w-full text-white lg:px-48 px-20 py-10">
-            <h1 class="text-3xl font-lato font-bold">TERMS AND CONDITIONS</h1>
-            <p class="text-[20px] font-lato mb-5">Welcome to Surround Snaps. By using our website, you agree to the following terms and conditions:</p>
-
-            <p class="text-[20px] font-lato mb-5"><span class="text-2xl font-lato font-bold">BOOKING AND PAYMENT:</span> To reserve our services, we require a non-refundable deposit of $100. The deposit is required to secure your 
-                date and time and is deducted from the total package price. We cannot hold any date without a deposit. Full 
-                payment is due 5 days prior to the event date. We accept payments via the website.
-            </p>
-
-            <p class="text-[20px] font-lato mb-5"><span class="text-2xl font-lato font-bold">CANCELLATION POLICY:</span> 
-                If a client cancels their reservation up to 10 days after the payment date, they are entitled to a full refund of their deposit. 
-                Any cancellations made after the 10-day grace period will forfeit their deposit. We understand that unforeseen circumstances may arise, 
-                and we will work with clients to reschedule their event date, but the deposit will remain non-refundable.
-            </p>
-
-            <p class="text-[20px] font-lato mb-5"><span class="text-2xl font-lato font-bold">RESPONSIBILITY:</span> 
-                We are not responsible for any damages or injuries that may occur during the event. It is the client's 
-                responsibility to provide a safe and secure area for the photo booth. Any damages to the photo booth or its accessories 
-                will be the responsibility of the client and billed accordingly.
-            </p>
-
-            <p class="text-[20px] font-lato mb-5"><span class="text-2xl font-lato font-bold">​PHOTO USAGE:</span> 
-                We reserve the right to use any and all photographs taken during the event for promotional purposes, 
-                including but not limited to social media, marketing materials, and advertising. Clients who do not wish to have 
-                their photographs used for promotional purposes must inform us in writing before the event.
-            </p>
-
-            <p class="text-[20px] font-lato mb-5"><span class="text-2xl font-lato font-bold">COPYRIGHT:</span>
-                All photographs taken during the event are the property of Surround Snaps. Clients may request a copy of the digital files, 
-                and we will provide them with a link to download the files. 
-            </p>
-
-            <p class="text-[20px] font-lato mb-20">By using our services, you agree to these terms and conditions. If you have any questions or concerns, please do not hesitate to contact us.</p>
 
             <h1 class="text-3xl font-lato font-bold">PRIVACY POLICY</h1>
             <p class="text-[20px] font-lato mb-5">

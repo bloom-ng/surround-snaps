@@ -42,6 +42,9 @@ Route::get('/contact', function () {
 Route::get('/terms', function () {
     return view('surround.terms');
 });
+Route::get('/privacy', function () {
+    return view('surround.privacy');
+});
 
 Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');

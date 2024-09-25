@@ -77,8 +77,8 @@
                 </div>
 
                 <div class="flex lg:flex-row md:items-center lg:items-center md:flex-row flex-col lg:w-1/2 md:w-1/2 md:justify-end lg:justify-end lg:mr-14 lg:ml-0 md:mr-12 md:ml-0 ml-10 lg:mb-0 mb-3">
-                    <a href=""><p class="lg:mr-7 md:mr-5 font-lato">Privacy Policy</p></a>
-                    <a href=""><p class="font-lato">Terms of Service</p></a>
+                    <a href="/privacy"><p class="lg:mr-7 md:mr-5 font-lato">Privacy Policy</p></a>
+                    <a href="/terms"><p class="font-lato">Terms of Service</p></a>
                 </div>
             </div>
 
