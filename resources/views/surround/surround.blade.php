@@ -95,10 +95,10 @@
         </div>
         <div id="pricing" class="flex flex-col bg-[#1b998b] text-white justify-center text-center p-10 lg:p-16">
             <h1 class="lg:text-4xl text-3xl font-lato font-extrabold">Choose Your Perfect Package</h1>
-            <div class="flex flex-col lg:flex-row justify-center items-center mt-16">
-                <div class="flex flex-col -mt-28">
+            <div class="flex flex-col lg:flex-row justify-start items-start lg:mt-16 mt-10">
+                <div class="flex flex-col-reverse lg:flex-col -28">
                     <div class="flex lg:flex-row flex-col"> 
-                        <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 lg:mr-10 leading-loose lg:mb-0 mb-5 lg:order-1 order-1">
+                        <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 lg:mr-10 leading-loose lg:mb-0 mb-5 lg:order-1 order-2">
                             <h1 class="text-[#A3A3A3] text-[30px] font-lato font-extrabold leading-tight mb-2">Silver <br>Package</h1>
                             <svg width="304" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px]">
                                 <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
@@ -119,7 +119,7 @@
                             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5.5" cy="5.5" r="5.5" fill="#F4845F"/>
                             </svg>                    
-                            <p class="text-black font-lato text-[18px] mt-2 mb-2">Led lightening</p>
+                            <p class="text-black font-lato text-[18px] mt-2 mb-2">Led lighting</p>
                             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5.5" cy="5.5" r="5.5" fill="#F4845F"/>
                             </svg>                    
@@ -145,9 +145,9 @@
                             </svg>
                             <p class="text-[#A3A3A3] text-3xl font-lato font-extrabold mt-5">$500</p>
                         </div> 
-        
+          
                 
-                        <div class="flex flex-col items-center bg-white rounded-3xl leading-loose lg:mr-10 py-12 px-10 lg:mb-0 mb-5 lg:order-2 order-2">
+                        <div class="flex flex-col items-center bg-white rounded-3xl leading-loose lg:mr-10 py-12 px-10 lg:mb-0 mb-5 lg:order-2 order-3">
                             <h1 class="text-[#FFD700] font-lato font-extrabold text-[30px] leading-tight mb-2">Gold <br>Package</h1>
                             <svg width="304" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px]">
                                 <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
@@ -168,7 +168,7 @@
                             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5.5" cy="5.5" r="5.5" fill="#F4845F"/>
                             </svg>                    
-                            <p class="text-black font-lato text-[18px] mt-2 mb-2">Led lightening</p>
+                            <p class="text-black font-lato text-[18px] mt-2 mb-2">Led lighting</p>
                             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5.5" cy="5.5" r="5.5" fill="#F4845F"/>
                             </svg>                    
@@ -195,13 +195,13 @@
                             <p class="text-3xl font-lato font-extrabold text-[#FFD700] mt-5">$600</p>        
                         </div> 
                     </div>
-                    <div class="bg-white rounded-xl font-lato font-extrabold lg:mt-5 mb-5 lg:mb-0 py-4 w-full lg:w-[95%] text-black lg:order-3 order-4">
+                    <div class="bg-white rounded-xl font-lato font-extrabold lg:mt-5 mb-5 lg:mb-0 py-4 w-full lg:w-[95%] text-black">
                         <p>Hourly packages start at $200/hr</p>
                     </div>
                 </div>
 
                 <!-- Platinum Package -->
-                <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 leading-loose lg:order-4 -order-1 lg:mb-0 mb-32">
+                <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 leading-loose lg:order-4 order-4 lg:mb-0 mb-20">
                     <h1 class="text-[#1B998B] font-lato font-extrabold text-[30px] leading-tight mb-2">Platinum <br>Package</h1>
                     <svg width="304" height="2" viewBox="0 0 304 2" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[150px]">
                         <line y1="1" x2="304" y2="1" stroke="#1B998B" stroke-width="2"/>
@@ -222,7 +222,7 @@
                     <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="5.5" cy="5.5" r="5.5" fill="#F4845F"/>
                     </svg>                    
-                    <p class="text-black font-lato text-[18px] mt-2 mb-2">Led lightening</p>
+                    <p class="text-black font-lato text-[18px] mt-2 mb-2">Led lighting</p>
                     <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="5.5" cy="5.5" r="5.5" fill="#F4845F"/>
                     </svg>                    

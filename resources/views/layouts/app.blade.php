@@ -31,7 +31,7 @@
                 <a href="/contact" class="font-normal font-lato lg:text-base @if(request()->is('contact')) text-[#1b998b] @endif">CONTACT US</a>
             </div>
             <div class="flex flex-row md:w-[20%] lg:w-[30%] justify-center items-center font-montserrat font-extrabold md:text-base lg:text-lg">
-                <a href="/booking"><div class="bg-[#F4845F] text-white lg:px-8 lg:py-1 md:px-4 md:py-1 lg:ml-44 rounded-2xl">BOOK NOW</div></a>
+                <a href="/booking"><div class="bg-[#F4845F] text-white lg:px-8 lg:py-1 md:px-4 md:py-1 justify-end rounded-2xl">BOOK NOW</div></a>
             </div>
         </div>
 
@@ -51,6 +51,7 @@
             <a href="/#pricing" class="py-2 font-normal font-lato text-base text-black">PRICING</a>
             <a href="/gallery" class="py-2 font-normal font-lato text-base @if(request()->is('gallery')) text-[#1b998b] @else text-black @endif">GALLERY</a>
             <a href="/contact" class="py-2 font-normal font-lato text-base @if(request()->is('contact')) text-[#1b998b] @else text-black @endif">CONTACT US</a>
+            <a href="/booking" class="font-lato text-base font-semibold text-white bg-[#F4845F] py-1 px-5 rounded-xl mt-1">BOOK NOW</a>
         </nav>
         <!-- /mobile header -->
 
@@ -94,7 +95,7 @@
                         </defs>
                     </svg></a>
 
-                    <a href=""><svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <a href="https://www.facebook.com/share/ZWkFpozqLyaTixys/?mibextid=LQQJ4d"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="36" height="36" fill="url(#pattern0_1721_190)"/>
                         <defs>
                         <pattern id="pattern0_1721_190" patternContentUnits="objectBoundingBox" width="1" height="1">

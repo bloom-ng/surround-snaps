@@ -8,7 +8,7 @@
             <div class="flex flex-col lg:w-[50%] mt-10 ml-10 mr-10 lg:mr-0 lg:ml-20 lg:mb-10 mb-10">
                 <h1 class="text-4xl lg:text-5xl font-extrabold font-lato text-white">Contact Us</h1>
                 <h1 class="mt-5 lg:mt-5 text-3xl lg:text-4xl font-lato font-bold text-white lg:w-[70%]">Let's Make Your Event Unforgettable</h1>
-                <p class="mt-3 lg:mt-5 text-lg lg:text-2xl font-lato font-normal text-white lg:w-[70%]">Fill out our booking form or reach out directly via email or phone. 
+                <p class="mt-3 lg:mt-5 text-lg lg:text-2xl font-lato font-normal text-white lg:w-[70%]"><a href="/booking" class="underline">Fill out our booking form</a> or reach out directly via email or phone. 
                     Follow us on social media for our latest updates and to see our booth in action.
                 </p>
                 <p class="flex flex-row items-center font-lato text-lg lg:text-xl text-white mt-5 lg:mt-5">

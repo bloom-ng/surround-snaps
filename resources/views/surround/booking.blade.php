@@ -9,7 +9,7 @@
 
         <form id="multiStepForm" method="POST" class="w-full">
             @csrf
-            <input type="hidden" id="package" name="package" value="silver">
+            <input type="hidden" id="package" name="package" value="platinum">
             <input type="hidden" id="additional_hours" name="additional_hours" value="0">
             <!-- Step 1 -->
             <div id="step1" class="flex step flex-col justify-center items-center w-full">
@@ -66,7 +66,7 @@
                             <input type="text" name="event_type" id="event_type"
                             class="rounded-full px-5 py-[8px] text-[10px] lg:text-sm lg:py-[5px] border border-orange-300 placeholder:italic mb-3 lg:mb-5"
                             placeholder="Allows us to prepare the appropriate setup and offers tailored to specific events."
-                            value="{{ old('event_type') }}">
+                            value="{{ old('event_type') }}"> 
                         </div>
 
                         <div class="flex flex-col text-sm">
@@ -123,7 +123,7 @@
                                 </svg>
                             </div>
                             <div class="flex justify-end items-end">
-                                <button type="button" onclick="nextStep()" class="rounded-full w-20 px-7 py-1 text-center lg:mt-0 mt-3 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
+                                <button type="button" id="nextButton" onclick="nextStep()" class="disabled:opacity-50 rounded-full w-20 px-7 py-1 text-center lg:mt-0 mt-3 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]" disabled>NEXT</button>
                             </div>
                         </div>     
                     </div>
@@ -194,13 +194,13 @@
 
                             <div class="flex flex-col lg:mt-4 mt-0">
                                 <label for="event_theme" class="mb-1 ml-5 font-lato font-normal text-sm">Does your event require a specific theme</label>
-                                <textarea rows="10" name="event_theme" id="event_theme" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] placeholder:italic" 
+                                <textarea rows="10" name="event_theme" id="event_theme" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] lg:text-sm placeholder:italic" 
                                 placeholder="Any information about the theme of the event."
                                 >{{ old('event_theme') }}</textarea>
                             </div>
                             <div class="flex flex-col lg:mt-4 mt-0">
                                 <label for="special_instructions" class="mb-1 ml-5 font-lato font-normal text-sm">Special Instructions or Requests</label>
-                                <textarea rows="10" name="special_instructions" id="special_instructions" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] placeholder:italic" 
+                                <textarea rows="10" name="special_instructions" id="special_instructions" class="rounded-2xl border border-orange-300 text-black py-2 px-5 text-[10px] lg:text-sm placeholder:italic" 
                                 placeholder="Field for anything specific the client needs, like theme-based props or accessibility considerations."
                                 >{{ old('special_instructions') }}</textarea>
                             </div>
@@ -219,7 +219,7 @@
                                     <div class="flex lg:flex-row justify-between lg:justify-end">
                                         <button type="button" onclick="prevStep()" class="rounded-full px-7 py-1 border border-[#f4845f] text-[#F4845F] bg-white font-montserrat font-extrabold text-[12px]">BACK</button>
                             
-                                        <button type="button" onclick="nextStep()" class="rounded-full lg:ml-5 px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
+                                        <button type="button" id="nextButton2" onclick="nextStep()" class="disabled:opacity-50 rounded-full lg:ml-5 px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]" disabled>NEXT</button>
                                     </div>
                                 </div> 
 
@@ -253,7 +253,7 @@
                            <div  class=" flex lg:flex-row flex-col bg items-center justify-between">
                                 <div id="box1" data-package="silver" data-cost="{{ $packageCost['silver'] }}"  class="package-box border-[#000000] border-[#F4845F] flex flex-col border-2  justify-center items-center w-80 lg:w-[374px] py-5 cursor-pointer lg:mb-0 mb-10">
                                     <div class="flex flex-row justify-between w-full">
-                                        <p class="text-[28px] text-[#A3A3A3] font-lato text-center font-extrabold w-3/4 pl-20">Silver <br>Package</p>
+                                        <p class="text-[28px] text-[#1B998B] font-lato text-center font-extrabold w-3/4 pl-20">Platinum <br>Package</p>
                                         <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
                                             <rect width="30" height="30" fill="url(#pattern0_1969_570)"/>
                                             <defs>
@@ -267,7 +267,7 @@
                                     <svg width="150" height="2" viewBox="0 0 200 2" fill="none" xmlns="http://www.w3.org/2000/svg" class=" mt-3">
                                         <line y1="1" x2="200" y2="1" stroke="#1B998B" stroke-width="2"/>
                                     </svg>
-                                    <p class="text-[#A3A3A3] font-extrabold font-lato text-[28px] mt-3">$500</p>
+                                    <p class="text-[#1B998B] font-extrabold font-lato text-[28px] mt-3">$700</p>
                                 </div>
 
 
@@ -293,7 +293,7 @@
 
                                 <div id="box3" data-package="platinum" data-cost="{{ $packageCost['platinum'] }}" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer">
                                     <div class="flex flex-row justify-between w-full">
-                                        <p class="font-extrabold font-lato text-[28px] text-[#1B998B] text-center w-3/4 pl-20">Platinum <br>Package</p>
+                                        <p class="font-extrabold font-lato text-[28px] text-[#A3A3A3] text-center w-3/4 pl-20">Silver <br>Package</p>
                                         <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
                                             <rect width="30" height="30" fill="url(#pattern0_1969_570)"/>
                                             <defs>
@@ -307,7 +307,7 @@
                                     <svg width="150" height="2" viewBox="0 0 200 2" fill="none" xmlns="http://www.w3.org/2000/svg" class=" mt-3">
                                         <line y1="1" x2="200" y2="1" stroke="#1B998B" stroke-width="2"/>
                                     </svg>
-                                    <p class="text-[#1B998B] font-extrabold font-lato text-[28px] mt-3">$700</p>
+                                    <p class="text-[#A3A3A3] font-extrabold font-lato text-[28px] mt-3">$500</p>
                                 </div>
                            </div>
 
@@ -351,7 +351,7 @@
                                     <div class="flex lg:flex-row justify-between lg:justify-end">
                                         <button type="button" onclick="prevStep()" class="rounded-full px-7 py-1 border border-[#f4845f] text-[#F4845F] bg-white font-montserrat font-extrabold text-[12px]">BACK</button>
                             
-                                        <button type="button" onclick="nextStep()" class="rounded-full lg:ml-5 px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
+                                        <button type="button" id="nextButton3" onclick="nextStep()" class="disabled:opacity-50 rounded-full lg:ml-5 px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]" disabled>NEXT</button>
                                     </div>
                                 </div> 
                             </div>
@@ -566,6 +566,128 @@
 
                     eventDateInput.addEventListener('change', checkAvailability);
                     eventStartTimeInput.addEventListener('change', checkAvailability);
+                });
+            </script>
+
+            <script>
+                // step1
+                document.addEventListener('DOMContentLoaded', () => {
+                    const step1Inputs = document.querySelectorAll('#step1 input'); // Select all input fields in Step 1
+                    const nextButton1 = document.getElementById('nextButton'); // Select the NEXT button for Step 1
+
+                    // Function to check validity of inputs in Step 1
+                    function checkStep1Validity() {
+                        const emailInput = document.getElementById('email');
+                        const phoneInput = document.getElementById('contact_number');
+
+                        const isEmailValid = validateEmail(emailInput.value.trim());
+                        const isPhoneValid = validatePhoneNumber(phoneInput.value.trim());
+
+                        // Show warnings if invalid
+                        if (!isEmailValid) {
+                            emailInput.setCustomValidity("Please enter a valid email address.");
+                        } else {
+                            emailInput.setCustomValidity(""); // Clear the warning
+                        }
+
+                        if (!isPhoneValid) {
+                            phoneInput.setCustomValidity("Please enter a valid phone number.");
+                        } else {
+                            phoneInput.setCustomValidity(""); // Clear the warning
+                        }
+
+                        // Enable the NEXT button only if all inputs are filled and valid
+                        nextButton1.disabled = !Array.from(step1Inputs).every(input => input.value.trim() !== '') || !isEmailValid || !isPhoneValid;
+                    }
+
+                    // Add event listeners to each input in Step 1
+                    step1Inputs.forEach(input => {
+                        input.addEventListener('input', checkStep1Validity); // Check validity on input change
+                    });
+
+                    // Initial check to disable the button if fields are empty on page load
+                    checkStep1Validity();
+                });
+
+                // Function to validate email format
+                function validateEmail(email) {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for validating email
+                    return emailPattern.test(email);
+                }
+
+                // Function to validate phone number format (flexible for international use)
+                function validatePhoneNumber(phone) {
+                    const phonePattern = /^[+\d]?(?:[\d-.\s()]*)$/; // Allows for various international formats
+                    return phonePattern.test(phone);
+                }
+
+
+                // step2
+                document.addEventListener('DOMContentLoaded', () => {
+                const step2Inputs = document.querySelectorAll('#step2 input, #step2 textarea'); // Select all input and textarea fields in Step 2
+                const nextButton2 = document.getElementById('nextButton2'); // Select the NEXT button for Step 2
+
+                // Function to check validity of inputs in Step 2
+                function checkStep2Validity() {
+                    // Enable the NEXT button only if all inputs are filled and valid
+                    nextButton2.disabled = !Array.from(step2Inputs).every(input => input.value.trim() !== '' && input.checkValidity());
+                }
+
+                // Add event listeners to each input and textarea in Step 2
+                step2Inputs.forEach(input => {
+                    input.addEventListener('input', checkStep2Validity); // Check validity on input change
+                });
+
+                // Initial check to disable the button if fields are empty on page load
+                checkStep2Validity();
+                });
+
+
+                // step 3
+                document.addEventListener('DOMContentLoaded', () => {
+                const packageBoxes = document.querySelectorAll('#step3 .package-box'); // Select all package boxes
+                const nextButton3 = document.getElementById('nextButton3'); // Select the NEXT button for Step 3
+
+                // Function to check if at least one package is selected
+                function checkStep3Validity() {
+                const isPackageSelected = Array.from(packageBoxes).some(box => box.classList.contains('selected')); // Check if any package box is selected
+                nextButton3.disabled = !isPackageSelected; // Enable the NEXT button only if a package is selected
+                }
+
+                // Add event listeners to each package box for click events
+                packageBoxes.forEach(box => {
+                    box.addEventListener('click', () => {
+                        box.classList.toggle('selected'); // Toggle the selected class on click
+                        checkStep3Validity(); // Check validity after selection
+                    });
+                });
+
+                // Initial check to disable the button if no package is selected on page load
+                checkStep3Validity();
+                });
+            </script>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                const dateInput = document.getElementById('event_date'); // Select the date input field
+
+                // Function to set the minimum date to one week from today
+                function setMinDate() {
+                    const today = new Date();
+                    const nextWeek = new Date(today);
+                    nextWeek.setDate(today.getDate() + 7); // Set to one week from today
+
+                    // Format the date to YYYY-MM-DD
+                    const year = nextWeek.getFullYear();
+                    const month = String(nextWeek.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+                    const day = String(nextWeek.getDate()).padStart(2, '0');
+
+                    // Set the min attribute of the date input
+                    dateInput.setAttribute('min', `${year}-${month}-${day}`);
+                }
+
+                // Call the function to set the minimum date on page load
+                setMinDate();
                 });
             </script>
         @endsection
