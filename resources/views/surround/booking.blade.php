@@ -77,7 +77,7 @@
                                     name="event_date"
                                     class="rounded-full border py-[8px] text-[10px] lg:text-sm px-5 lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                     placeholder="To check availability."
-                                    minnn="{{ date('Y-m-d', strtotime('+1 week')) }}"
+                                    min="{{ date('Y-m-d', strtotime('+1 week')) }}"
                                     value="{{ old('event_date') }}"
                                     >
                             
