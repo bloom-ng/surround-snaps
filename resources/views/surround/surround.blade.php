@@ -5,7 +5,7 @@
 @section('content')
 
         <div class="flex relative">
-            <img src="/images/decor.jpg" alt="decor">
+            <img src="/images/decor.jpg" alt="decor" class="w-screen">
             <div class="flex flex-col absolute justify-center items-center bottom-0 w-full">
                 <p class="flex text-center bg-[#1b998b]/50 text-fuchsia-50 font-lato font-extrabold text-2xl lg:text-5xl px-5 py-2 mb-3 lg:mb-10">Elevate Your Events with <br>360° Capture Magic.</p>
                 <div class="flex">
@@ -95,7 +95,7 @@
         </div>
         <div id="pricing" class="flex flex-col bg-[#1b998b] text-white justify-center text-center p-10 lg:p-16">
             <h1 class="lg:text-4xl text-3xl font-lato font-extrabold">Choose Your Perfect Package</h1>
-            <div class="flex flex-col lg:flex-row justify-start items-start lg:mt-16 mt-10">
+            <div class="flex flex-col lg:flex-row justify-center items-start lg:mt-16 mt-10">
                 <div class="flex flex-col-reverse lg:flex-col -28">
                     <div class="flex lg:flex-row flex-col"> 
                         <div class="flex flex-col items-center bg-white rounded-3xl py-12 px-10 lg:mr-10 leading-loose lg:mb-0 mb-5 lg:order-1 order-2">

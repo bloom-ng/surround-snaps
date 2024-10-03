@@ -77,7 +77,7 @@
                                     name="event_date"
                                     class="rounded-full border py-[8px] text-[10px] lg:text-sm px-5 lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                     placeholder="To check availability."
-                                    min="{{ date('Y-m-d', strtotime('+1 week')) }}"
+                                    minnn="{{ date('Y-m-d', strtotime('+1 week')) }}"
                                     value="{{ old('event_date') }}"
                                     >
                             
@@ -249,40 +249,24 @@
                     
                         <div class="flex flex-col bg-white rounded-2xl mb-5 lg:px-14 px-5 py-7 w-full">
                             <h1 class="mb-3 text-[#F4845F] text-3xl font-lato font-extrabold">Service Selection</h1>
-                    
+                         
                            <div  class=" flex lg:flex-row flex-col bg items-center justify-between">
-                                <div id="box1" data-package="silver" data-cost="{{ $packageCost['silver'] }}"  class="package-box border-[#000000] border-[#F4845F] flex flex-col border-2  justify-center items-center w-80 lg:w-[374px] py-5 cursor-pointer lg:mb-0 mb-10">
+                                <div id="box1" data-package="platinum" data-cost="{{ $packageCost['platinum'] }}" class="flex flex-col border-2 border-[#000000] border-[#F4845F] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer">
                                     <div class="flex flex-row justify-between w-full">
-                                        <p class="text-[28px] text-[#1B998B] font-lato text-center font-extrabold w-3/4 pl-20">Platinum <br>Package</p>
-                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
-                                            <rect width="30" height="30" fill="url(#pattern0_1969_570)"/>
-                                            <defs>
-                                            <pattern id="pattern0_1969_570" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                            <use xlink:href="#image0_1969_570" transform="scale(0.0111111)"/>
-                                            </pattern>
-                                            <image id="image0_1969_570" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD5klEQVR4nO2dy2oUQRSGP4iaiLetN1BRX8DLyohBohAVjAsVogHvmwiJiq7dqUGjBHwNb1kYzANERYlRF24UF941F1cmEFNScoQ4TIfR6a463XM++DdhZnLOT1NdVX3qNBiGYRiGYRiGYRgVUwdsBo4D3cAd4DnwGhgFJkWj8rfn8pkr8p1N8htGGVYCXUAf8B1wVWocuAd0AiuoceYD7cAA8DMFc5M0BTwADgMN1BAL5Up7n6G5SfoCXASWUGDmAueBkQgGl8rHcE5iKhRbgRcKDC7VK6CZAuDHxJvAtAJTk+Rj6wXqySmrgYcKjHQV6imwjpzRnNI0zQWWnxZuJyfsA34oMM39p/xi6CDKOZXxnNgFks/hJEpplcVBbJNcimYfQBl+XJtQYI7LYBjZiRLW5/TG5/7hBrk2tsn1Mi1yBdeT2PPsmwpMcIHkFzVR2BZhxTcI9IgGA/9vn2tjaJP9ZszLgEmOAS1l4tglY2ioOPxDhjkhjT4f+GpqmSWW3YFjORPK5EWBtzoHK4jpUcB4vsqeeuZcCHwFXa0gpmuBY/J72Zk/fvqk0OiewDF9yPqxWHvghJzCoeOPDmVp9ECEhJzMLpLYEymm/ixLAmLtzI3L7KKcySGndzPlN9CWZWF0V6SE3Aw9kvH4OvBYQTynszC6T0FiTplupW1ynazOYifmlGks7fKzzQqSckq1MU2jTyhIyCnV0TSN7laQkFOqS2kafVdBQq4WbojDChJySjWUptFvFSSUROy43pAiGipAk4gdl982TY1JBQklETsuX2aRGmY0YYy2oYMwQ4fdDAlzM9QwvUuiUNM7DQuWJAq1YNGwBE+iUEvw4woSSiJ2XEco2DZpErHj2kDBNv6TKNTGP3K22owm20dZyLFiM5q/POjIwujlkc+oJBErHu/FUjLCdwkwo/ntwX0KVhLmlF7RbVka3RCp/YNTZvRHKfgsVBG6U2j0WQKwQLYGa9Xob6EK0ZFC7Fo1upOA+AMzzyIk6SLrRYyuNY3KG564lDUtR/6i0KvAABdIN4hIvRzfdQXXY2AekVkbsereBdqhW4MSmnLedcYlyJdZ7EAZewvYGGU/SjlZkFY/U1ITrprWnA8jExpb/MzW+mc8pze+JnLGqgg9NVwVeqKhpU818+xe5SvIaVmMRJ8np7VcH1Zgaql8TFsoGHOkqUiMLdZSfZVduKDdZEKzQJJ8F8Hgz9KoezE1RIO0YujPeKEzJQ9S22qt9Xw5lskB9tvyNopqzR2V3+rIsiQg79RJPdsx4LJUAw3Jq0BGZrweZET+NiSfuSynWP137fUghmEYhmEYhmEYVMgvbkcWtzNuJV4AAAAASUVORK5CYII="/>
-                                            </defs>
-                                        </svg>
+                                        <p class="font-extrabold font-lato text-[28px] text-[#A3A3A3] text-center w-3/4 pl-20">Platinum <br>Package</p>
+                                        <input class="w-4 h -4 items-start mr-7 mb-5" type="checkbox" name="select_package" checked/>
                                     </div>
                                     <svg width="150" height="2" viewBox="0 0 200 2" fill="none" xmlns="http://www.w3.org/2000/svg" class=" mt-3">
                                         <line y1="1" x2="200" y2="1" stroke="#1B998B" stroke-width="2"/>
                                     </svg>
-                                    <p class="text-[#1B998B] font-extrabold font-lato text-[28px] mt-3">$700</p>
+                                    <p class="text-[#A3A3A3] font-extrabold font-lato text-[28px] mt-3">$700</p>
                                 </div>
 
 
                                 <div id="box2" data-package="gold" data-cost="{{ $packageCost['gold'] }}" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer lg:mb-0 mb-10">
                                     <div class="flex flex-row justify-between w-full">
                                         <p class="text-[#FFD700] font-extrabold font-lato text-[28px] text-center w-3/4 pl-20">Gold <br>Package</p>
-                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
-                                            <rect width="30" height="30" fill="url(#pattern0_1969_570)"/>
-                                            <defs>
-                                            <pattern id="pattern0_1969_570" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                            <use xlink:href="#image0_1969_570" transform="scale(0.0111111)"/>
-                                            </pattern>
-                                            <image id="image0_1969_570" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD5klEQVR4nO2dy2oUQRSGP4iaiLetN1BRX8DLyohBohAVjAsVogHvmwiJiq7dqUGjBHwNb1kYzANERYlRF24UF941F1cmEFNScoQ4TIfR6a463XM++DdhZnLOT1NdVX3qNBiGYRiGYRiGYRgVUwdsBo4D3cAd4DnwGhgFJkWj8rfn8pkr8p1N8htGGVYCXUAf8B1wVWocuAd0AiuoceYD7cAA8DMFc5M0BTwADgMN1BAL5Up7n6G5SfoCXASWUGDmAueBkQgGl8rHcE5iKhRbgRcKDC7VK6CZAuDHxJvAtAJTk+Rj6wXqySmrgYcKjHQV6imwjpzRnNI0zQWWnxZuJyfsA34oMM39p/xi6CDKOZXxnNgFks/hJEpplcVBbJNcimYfQBl+XJtQYI7LYBjZiRLW5/TG5/7hBrk2tsn1Mi1yBdeT2PPsmwpMcIHkFzVR2BZhxTcI9IgGA/9vn2tjaJP9ZszLgEmOAS1l4tglY2ioOPxDhjkhjT4f+GpqmSWW3YFjORPK5EWBtzoHK4jpUcB4vsqeeuZcCHwFXa0gpmuBY/J72Zk/fvqk0OiewDF9yPqxWHvghJzCoeOPDmVp9ECEhJzMLpLYEymm/ixLAmLtzI3L7KKcySGndzPlN9CWZWF0V6SE3Aw9kvH4OvBYQTynszC6T0FiTplupW1ynazOYifmlGks7fKzzQqSckq1MU2jTyhIyCnV0TSN7laQkFOqS2kafVdBQq4WbojDChJySjWUptFvFSSUROy43pAiGipAk4gdl982TY1JBQklETsuX2aRGmY0YYy2oYMwQ4fdDAlzM9QwvUuiUNM7DQuWJAq1YNGwBE+iUEvw4woSSiJ2XEco2DZpErHj2kDBNv6TKNTGP3K22owm20dZyLFiM5q/POjIwujlkc+oJBErHu/FUjLCdwkwo/ntwX0KVhLmlF7RbVka3RCp/YNTZvRHKfgsVBG6U2j0WQKwQLYGa9Xob6EK0ZFC7Fo1upOA+AMzzyIk6SLrRYyuNY3KG564lDUtR/6i0KvAABdIN4hIvRzfdQXXY2AekVkbsereBdqhW4MSmnLedcYlyJdZ7EAZewvYGGU/SjlZkFY/U1ITrprWnA8jExpb/MzW+mc8pze+JnLGqgg9NVwVeqKhpU818+xe5SvIaVmMRJ8np7VcH1Zgaql8TFsoGHOkqUiMLdZSfZVduKDdZEKzQJJ8F8Hgz9KoezE1RIO0YujPeKEzJQ9S22qt9Xw5lskB9tvyNopqzR2V3+rIsiQg79RJPdsx4LJUAw3Jq0BGZrweZET+NiSfuSynWP137fUghmEYhmEYhmEYVMgvbkcWtzNuJV4AAAAASUVORK5CYII="/>
-                                            </defs>
-                                        </svg>
+                                        <input class="w-4 h -4 items-start mr-7 mb-5" type="checkbox" name="select_package"/>
                                     </div>
                                     <svg width="150" height="2" viewBox="0 0 200 2" fill="none" xmlns="http://www.w3.org/2000/svg" class=" mt-3">
                                         <line y1="1" x2="200" y2="1" stroke="#1B998B" stroke-width="2"/>
@@ -291,24 +275,16 @@
                                 </div>
 
 
-                                <div id="box3" data-package="platinum" data-cost="{{ $packageCost['platinum'] }}" class="flex flex-col border-2 border-[#000000] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer">
+                                <div id="box3" data-package="silver" data-cost="{{ $packageCost['silver'] }}"  class="package-box border-[#000000] flex flex-col border-2  justify-center items-center w-80 lg:w-[374px] py-5 cursor-pointer lg:mb-0 mb-10">
                                     <div class="flex flex-row justify-between w-full">
-                                        <p class="font-extrabold font-lato text-[28px] text-[#A3A3A3] text-center w-3/4 pl-20">Silver <br>Package</p>
-                                        <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-1/4">
-                                            <rect width="30" height="30" fill="url(#pattern0_1969_570)"/>
-                                            <defs>
-                                            <pattern id="pattern0_1969_570" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                            <use xlink:href="#image0_1969_570" transform="scale(0.0111111)"/>
-                                            </pattern>
-                                            <image id="image0_1969_570" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD5klEQVR4nO2dy2oUQRSGP4iaiLetN1BRX8DLyohBohAVjAsVogHvmwiJiq7dqUGjBHwNb1kYzANERYlRF24UF941F1cmEFNScoQ4TIfR6a463XM++DdhZnLOT1NdVX3qNBiGYRiGYRiGYRgVUwdsBo4D3cAd4DnwGhgFJkWj8rfn8pkr8p1N8htGGVYCXUAf8B1wVWocuAd0AiuoceYD7cAA8DMFc5M0BTwADgMN1BAL5Up7n6G5SfoCXASWUGDmAueBkQgGl8rHcE5iKhRbgRcKDC7VK6CZAuDHxJvAtAJTk+Rj6wXqySmrgYcKjHQV6imwjpzRnNI0zQWWnxZuJyfsA34oMM39p/xi6CDKOZXxnNgFks/hJEpplcVBbJNcimYfQBl+XJtQYI7LYBjZiRLW5/TG5/7hBrk2tsn1Mi1yBdeT2PPsmwpMcIHkFzVR2BZhxTcI9IgGA/9vn2tjaJP9ZszLgEmOAS1l4tglY2ioOPxDhjkhjT4f+GpqmSWW3YFjORPK5EWBtzoHK4jpUcB4vsqeeuZcCHwFXa0gpmuBY/J72Zk/fvqk0OiewDF9yPqxWHvghJzCoeOPDmVp9ECEhJzMLpLYEymm/ixLAmLtzI3L7KKcySGndzPlN9CWZWF0V6SE3Aw9kvH4OvBYQTynszC6T0FiTplupW1ynazOYifmlGks7fKzzQqSckq1MU2jTyhIyCnV0TSN7laQkFOqS2kafVdBQq4WbojDChJySjWUptFvFSSUROy43pAiGipAk4gdl982TY1JBQklETsuX2aRGmY0YYy2oYMwQ4fdDAlzM9QwvUuiUNM7DQuWJAq1YNGwBE+iUEvw4woSSiJ2XEco2DZpErHj2kDBNv6TKNTGP3K22owm20dZyLFiM5q/POjIwujlkc+oJBErHu/FUjLCdwkwo/ntwX0KVhLmlF7RbVka3RCp/YNTZvRHKfgsVBG6U2j0WQKwQLYGa9Xob6EK0ZFC7Fo1upOA+AMzzyIk6SLrRYyuNY3KG564lDUtR/6i0KvAABdIN4hIvRzfdQXXY2AekVkbsereBdqhW4MSmnLedcYlyJdZ7EAZewvYGGU/SjlZkFY/U1ITrprWnA8jExpb/MzW+mc8pze+JnLGqgg9NVwVeqKhpU818+xe5SvIaVmMRJ8np7VcH1Zgaql8TFsoGHOkqUiMLdZSfZVduKDdZEKzQJJ8F8Hgz9KoezE1RIO0YujPeKEzJQ9S22qt9Xw5lskB9tvyNopqzR2V3+rIsiQg79RJPdsx4LJUAw3Jq0BGZrweZET+NiSfuSynWP137fUghmEYhmEYhmEYVMgvbkcWtzNuJV4AAAAASUVORK5CYII="/>
-                                            </defs>
-                                        </svg>
+                                        <p class="text-[28px] text-[#1B998B] font-lato text-center font-extrabold w-3/4 pl-20">Silver <br>Package</p>
+                                        <input class="w-4 h -4 items-start mr-7 mb-5" type="checkbox" name="select_package"/>
                                     </div>
                                     <svg width="150" height="2" viewBox="0 0 200 2" fill="none" xmlns="http://www.w3.org/2000/svg" class=" mt-3">
                                         <line y1="1" x2="200" y2="1" stroke="#1B998B" stroke-width="2"/>
                                     </svg>
-                                    <p class="text-[#A3A3A3] font-extrabold font-lato text-[28px] mt-3">$500</p>
-                                </div>
+                                    <p class="text-[#1B998B] font-extrabold font-lato text-[28px] mt-3">$500</p>
+                                </div>  
                            </div>
 
                            <h1 class="mt-5 text-xl font-normal font-lato ml-10">Additional services</h1>
@@ -351,7 +327,7 @@
                                     <div class="flex lg:flex-row justify-between lg:justify-end">
                                         <button type="button" onclick="prevStep()" class="rounded-full px-7 py-1 border border-[#f4845f] text-[#F4845F] bg-white font-montserrat font-extrabold text-[12px]">BACK</button>
                             
-                                        <button type="button" id="nextButton3" onclick="nextStep()" class="disabled:opacity-50 rounded-full lg:ml-5 px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]" disabled>NEXT</button>
+                                        <button type="button" id="nextButton3" onclick="nextStep()" class="rounded-full lg:ml-5 px-7 lg:w-[70%] py-1 bg-[#F4845F] text-white font-montserrat font-extrabold text-[12px]">NEXT</button>
                                     </div>
                                 </div> 
                             </div>
@@ -421,7 +397,7 @@
                                     <label for="package" class=" mb-1 font-lato font-normal">Special Request</label>
                                     <p id="confirmSpecial_instructions" class="text-lg font-lato font-bold mb-3"></p>
 
-                                    <label for="package" class=" mb-1 font-lato font-normal">Package</label>/
+                                    <label for="package" class=" mb-1 font-lato font-normal">Package</label>
                                     <p id="confirmPackage" class="text-lg font-lato font-bold mb-3">Silver Package</p>
 
                                     <label for="service" class="mb-1 font-lato font-normal">Additional Hours</label>
@@ -572,41 +548,52 @@
             <script>
                 // step1
                 document.addEventListener('DOMContentLoaded', () => {
-                    const step1Inputs = document.querySelectorAll('#step1 input'); // Select all input fields in Step 1
-                    const nextButton1 = document.getElementById('nextButton'); // Select the NEXT button for Step 1
+                const step1Inputs = document.querySelectorAll('#step1 input'); // Select all input fields in Step 1
+                const nextButton1 = document.getElementById('nextButton'); // Select the NEXT button for Step 1
+                const dateInput = document.getElementById('event_date'); // Select the date input field
 
-                    // Function to check validity of inputs in Step 1
-                    function checkStep1Validity() {
-                        const emailInput = document.getElementById('email');
-                        const phoneInput = document.getElementById('contact_number');
+                // Function to check validity of inputs in Step 1
+                function checkStep1Validity() {
+                    const emailInput = document.getElementById('email');
+                    const phoneInput = document.getElementById('contact_number');
 
-                        const isEmailValid = validateEmail(emailInput.value.trim());
-                        const isPhoneValid = validatePhoneNumber(phoneInput.value.trim());
+                    const isEmailValid = validateEmail(emailInput.value.trim());
+                    const isPhoneValid = validatePhoneNumber(phoneInput.value.trim());
+                    const isDateValid = validateDate(dateInput.value); // Validate the date
 
-                        // Show warnings if invalid
-                        if (!isEmailValid) {
-                            emailInput.setCustomValidity("Please enter a valid email address.");
-                        } else {
-                            emailInput.setCustomValidity(""); // Clear the warning
-                        }
-
-                        if (!isPhoneValid) {
-                            phoneInput.setCustomValidity("Please enter a valid phone number.");
-                        } else {
-                            phoneInput.setCustomValidity(""); // Clear the warning
-                        }
-
-                        // Enable the NEXT button only if all inputs are filled and valid
-                        nextButton1.disabled = !Array.from(step1Inputs).every(input => input.value.trim() !== '') || !isEmailValid || !isPhoneValid;
+                    // Show warnings if invalid
+                    if (!isEmailValid) {
+                        emailInput.setCustomValidity("Please enter a valid email address.");
+                    } else {
+                        emailInput.setCustomValidity(""); // Clear the warning
                     }
 
-                    // Add event listeners to each input in Step 1
-                    step1Inputs.forEach(input => {
-                        input.addEventListener('input', checkStep1Validity); // Check validity on input change
-                    });
+                    if (!isPhoneValid) {
+                        phoneInput.setCustomValidity("Please enter a valid phone number.");
+                    } else {
+                        phoneInput.setCustomValidity(""); // Clear the warning
+                    }
 
-                    // Initial check to disable the button if fields are empty on page load
-                    checkStep1Validity();
+                    if (!isDateValid) {
+                        dateInput.setCustomValidity("Please select a date at least one week from today.");
+                    } else {
+                        dateInput.setCustomValidity(""); // Clear the warning
+                    }
+
+                    // Enable the NEXT button only if all inputs are filled and valid
+                    nextButton1.disabled = !Array.from(step1Inputs).every(input => input.value.trim() !== '') || !isEmailValid || !isPhoneValid || !isDateValid;
+                }
+
+                // Add event listeners to each input in Step 1
+                step1Inputs.forEach(input => {
+                    input.addEventListener('input', checkStep1Validity); // Check validity on input change
+                });
+
+                // Add event listener for the date input
+                dateInput.addEventListener('input', checkStep1Validity); // Check validity on date change
+
+                // Initial check to disable the button if fields are empty on page load
+                checkStep1Validity();
                 });
 
                 // Function to validate email format
@@ -619,6 +606,19 @@
                 function validatePhoneNumber(phone) {
                     const phonePattern = /^[+\d]?(?:[\d-.\s()]*)$/; // Allows for various international formats
                     return phonePattern.test(phone);
+                }
+
+                // Function to validate that the selected date is at least one week from today
+                function validateDate(selectedDate) {
+                    const today = new Date();
+                    const oneWeekFromToday = new Date();
+                    oneWeekFromToday.setDate(today.getDate() + 7); // Set to one week from today
+
+                    // Convert the selected date to a Date object
+                    const eventDate = new Date(selectedDate);
+
+                    // Check if the selected date is valid and at least one week from today
+                    return eventDate >= oneWeekFromToday;
                 }
 
 
@@ -641,53 +641,57 @@
                 // Initial check to disable the button if fields are empty on page load
                 checkStep2Validity();
                 });
+            </script>   
 
+            <script>
+                // Get the date input element
+                const dateInput = document.getElementById('event_date');
 
-                // step 3
-                document.addEventListener('DOMContentLoaded', () => {
-                const packageBoxes = document.querySelectorAll('#step3 .package-box'); // Select all package boxes
-                const nextButton3 = document.getElementById('nextButton3'); // Select the NEXT button for Step 3
+                // Add event listener to date input
+                dateInput.addEventListener('change', function() {
+                    const selectedDate = new Date(dateInput.value);
+                    console.log(dateInput.value);
+                    const today = new Date();
+                    const sevenDaysFromNow = new Date(today.setDate(today.getDate() + 7));
 
-                // Function to check if at least one package is selected
-                function checkStep3Validity() {
-                const isPackageSelected = Array.from(packageBoxes).some(box => box.classList.contains('selected')); // Check if any package box is selected
-                nextButton3.disabled = !isPackageSelected; // Enable the NEXT button only if a package is selected
-                }
-
-                // Add event listeners to each package box for click events
-                packageBoxes.forEach(box => {
-                    box.addEventListener('click', () => {
-                        box.classList.toggle('selected'); // Toggle the selected class on click
-                        checkStep3Validity(); // Check validity after selection
-                    });
-                });
-
-                // Initial check to disable the button if no package is selected on page load
-                checkStep3Validity();
+                    // Check if selected date is at least 7 days from now
+                    if (selectedDate >= sevenDaysFromNow) {
+                        console.log ('Date is valid');
+                        // Enable submit button or perform desired action
+                    } else {
+                        console.log('Date must be at least 7 days from now');
+                        toastr["error"]("Event Date must be atleast 7 days from today")
+                        // Disable submit button or display error message
+                    }
                 });
             </script>
 
             <script>
+                //checkboxes
                 document.addEventListener('DOMContentLoaded', () => {
-                const dateInput = document.getElementById('event_date'); // Select the date input field
+                // Select all package boxes
+                const packageBoxes = document.querySelectorAll('.package-box');
 
-                // Function to set the minimum date to one week from today
-                function setMinDate() {
-                    const today = new Date();
-                    const nextWeek = new Date(today);
-                    nextWeek.setDate(today.getDate() + 7); // Set to one week from today
+                packageBoxes.forEach(box => {
+                    // Add click event listener to each package box
+                    box.addEventListener('click', () => {
+                        // Find the checkbox within the clicked box
+                        const checkbox = box.querySelector('input[type="checkbox"]');
 
-                    // Format the date to YYYY-MM-DD
-                    const year = nextWeek.getFullYear();
-                    const month = String(nextWeek.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-                    const day = String(nextWeek.getDate()).padStart(2, '0');
+                        // Uncheck all checkboxes first
+                        packageBoxes.forEach(otherBox => {
+                            const otherCheckbox = otherBox.querySelector('input[type="checkbox"]');
+                            otherCheckbox.checked = false; // Uncheck all other checkboxes
+                        });
 
-                    // Set the min attribute of the date input
-                    dateInput.setAttribute('min', `${year}-${month}-${day}`);
-                }
+                        // Check the clicked checkbox
+                        checkbox.checked = true; // Check the current checkbox
 
-                // Call the function to set the minimum date on page load
-                setMinDate();
+                        // Update the hidden input value based on the selected package
+                        const packageValue = box.getAttribute('data-package');
+                        document.getElementById('package').value = packageValue; // Update hidden input value
+                    });
+                });
                 });
             </script>
         @endsection

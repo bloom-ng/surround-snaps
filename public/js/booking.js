@@ -81,7 +81,13 @@
           document.getElementById(`step${step}`).classList.remove('hidden');
         }
       
-        function nextStep() {
+        function nextStep(inputs = []) {
+            // for each input
+            // get the element
+            // get the value
+            // validate
+            // if valid goto next
+            // else send error msg 
           currentStep++;
           if (currentStep > totalSteps) currentStep = totalSteps; // Ensure it doesn’t exceed total steps
           showStep(currentStep);

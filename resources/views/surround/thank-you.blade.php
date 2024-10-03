@@ -32,3 +32,11 @@
         </div>
     </div>
 @endsection
+
+<script>
+    window.addEventListener('load', function() {
+    setTimeout(function() {
+        window.location.href = '/';
+    }, 7000);
+    });
+</script>
