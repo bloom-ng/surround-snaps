@@ -55,7 +55,7 @@
                 
                         <div class="flex flex-col">
                             <label for="email" class="mb-1 ml-5 font-lato font-normal text-sm">Email Address</label>
-                            <input type="text" name="email" id="email"
+                            <input type="email" name="email" id="email"
                             class="rounded-full border px-5 py-[8px] lg:py-[5px] border-orange-300 placeholder:italic lg:text-sm text-[9px]"
                             placeholder="For sending booking confirmations and promotional offers."
                             value="{{ old('email') }}">
@@ -552,6 +552,12 @@
                 const nextButton1 = document.getElementById('nextButton'); // Select the NEXT button for Step 1
                 const dateInput = document.getElementById('event_date'); // Select the date input field
 
+                // Function to validate email format
+                function validateEmail(email) {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for validating email
+                    return emailPattern.test(email);
+                }
+
                 // Function to check validity of inputs in Step 1
                 function checkStep1Validity() {
                     const emailInput = document.getElementById('email');
@@ -562,11 +568,16 @@
                     const isDateValid = validateDate(dateInput.value); // Validate the date
 
                     // Show warnings if invalid
-                    if (!isEmailValid) {
+                    if (isEmailValid) {
                         emailInput.setCustomValidity("Please enter a valid email address.");
+                        console.log ('Email is valid');
+                        // Enable submit button or perform desired action
                     } else {
-                        emailInput.setCustomValidity(""); // Clear the warning
+                        console.log('Email is Invalid');
+                        toastr["error"]("Please enter a valid Email")
+
                     }
+                        
 
                     if (!isPhoneValid) {
                         phoneInput.setCustomValidity("Please enter a valid phone number.");
@@ -595,12 +606,6 @@
                 // Initial check to disable the button if fields are empty on page load
                 checkStep1Validity();
                 });
-
-                // Function to validate email format
-                function validateEmail(email) {
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for validating email
-                    return emailPattern.test(email);
-                }
 
                 // Function to validate phone number format (flexible for international use)
                 function validatePhoneNumber(phone) {
