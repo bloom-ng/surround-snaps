@@ -251,7 +251,7 @@
                             <h1 class="mb-3 text-[#F4845F] text-3xl font-lato font-extrabold">Service Selection</h1>
                          
                            <div  class=" flex lg:flex-row flex-col bg items-center justify-between">
-                                <div id="box1" data-package="platinum" data-cost="{{ $packageCost['platinum'] }}" class="flex flex-col border-2 border-[#000000] border-[#F4845F] justify-center items-center w-80 lg:w-[374px] py-5 package-box cursor-pointer">
+                                <div id="box1" data-package="platinum" data-cost="{{ $packageCost['platinum'] }}" class="flex flex-col border-2 border-[#000000] border-[#F4845F] justify-center items-center w-80 lg:w-[374px] lg:mb-0 mb-10 py-5 package-box cursor-pointer">
                                     <div class="flex flex-row justify-between w-full">
                                         <p class="font-extrabold font-lato text-[28px] text-[#A3A3A3] text-center w-3/4 pl-20">Platinum <br>Package</p>
                                         <input class="w-4 h -4 items-start mr-7 mb-5" type="checkbox" name="select_package" checked/>
@@ -559,7 +559,8 @@
                 }
 
                 // Function to check validity of inputs in Step 1
-                function checkStep1Validity() {
+                function checkStep1Validity(e) {
+                    console.log("VALIDITY",e)
                     const emailInput = document.getElementById('email');
                     const phoneInput = document.getElementById('contact_number');
 
@@ -568,28 +569,17 @@
                     const isDateValid = validateDate(dateInput.value); // Validate the date
 
                     // Show warnings if invalid
-                    if (isEmailValid) {
-                        emailInput.setCustomValidity("Please enter a valid email address.");
-                        console.log ('Email is valid');
-                        // Enable submit button or perform desired action
-                    } else {
+                    if (!isEmailValid && e.target.id == "email") {
                         console.log('Email is Invalid');
                         toastr["error"]("Please enter a valid Email")
-
                     }
                         
 
-                    if (!isPhoneValid) {
-                        phoneInput.setCustomValidity("Please enter a valid phone number.");
-                    } else {
-                        phoneInput.setCustomValidity(""); // Clear the warning
-                    }
+                    if (!isPhoneValid && e.target.id == "contact_number") {
+                        toastr["error"]("Please enter a valid phone number.");
+                    } 
 
-                    if (!isDateValid) {
-                        dateInput.setCustomValidity("Please select a date at least one week from today.");
-                    } else {
-                        dateInput.setCustomValidity(""); // Clear the warning
-                    }
+                    
 
                     // Enable the NEXT button only if all inputs are filled and valid
                     nextButton1.disabled = !Array.from(step1Inputs).every(input => input.value.trim() !== '') || !isEmailValid || !isPhoneValid || !isDateValid;
@@ -597,15 +587,15 @@
 
                 // Add event listeners to each input in Step 1
                 step1Inputs.forEach(input => {
-                    input.addEventListener('input', checkStep1Validity); // Check validity on input change
+                    input.addEventListener('blur', checkStep1Validity); // Check validity on input change
                 });
 
                 // Add event listener for the date input
                 dateInput.addEventListener('input', checkStep1Validity); // Check validity on date change
 
                 // Initial check to disable the button if fields are empty on page load
-                checkStep1Validity();
-                });
+                
+                } );
 
                 // Function to validate phone number format (flexible for international use)
                 function validatePhoneNumber(phone) {
