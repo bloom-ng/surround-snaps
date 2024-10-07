@@ -45,6 +45,7 @@ class SquarePaymentService
             $checkout_options = new \Square\Models\CheckoutOptions();
             $checkout_options->setRedirectUrl($successUrl);
             $checkout_options->setAcceptedPaymentMethods($accepted_payment_methods);
+            $checkout_options->setEnableCoupon(true);
 
             $body = new \Square\Models\CreatePaymentLinkRequest();
             $body->setIdempotencyKey(uniqid());
