@@ -27,7 +27,7 @@ class SquarePaymentService
     {
         try {
             $checkout_api = $this->client->getCheckoutApi();
-            $location_id = $this->location;;
+            $location_id = $this->location;
 
             $price_money = new \Square\Models\Money();
             $price_money->setAmount($amount);
@@ -96,7 +96,8 @@ class SquarePaymentService
     public function createInvoice($customerId, $orderDetails)
     {
         try {
-            $orderId = $this->createOrder($customerId, $orderDetails['amount'], $orderDetails['currency']);
+            $order_amount = $orderDetails['amount'] * 100; // Order details converted to cents
+            $orderId = $this->createOrder($customerId, $order_amount, $orderDetails['currency']);
             
             $primary_recipient = new \Square\Models\InvoiceRecipient();
             $primary_recipient->setCustomerId($customerId);
