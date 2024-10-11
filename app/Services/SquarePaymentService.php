@@ -96,10 +96,8 @@ class SquarePaymentService
     public function createInvoice($customerId, $orderDetails)
     {
         try {
-
             $orderId = $this->createOrder($customerId, $orderDetails['amount'], $orderDetails['currency']);
             
-
             $primary_recipient = new \Square\Models\InvoiceRecipient();
             $primary_recipient->setCustomerId($customerId);
 
@@ -130,12 +128,21 @@ class SquarePaymentService
 
             if ($api_response->isSuccess()) {
                 $result = $api_response->getResult();
-                return $result->getInvoice()->getId();
+                $invoiceId = $result->getInvoice()->getId();
+                
+                // Publish the invoice
+                $publishResponse = $this->publishInvoice($invoiceId);
+                
+                if ($publishResponse->isSuccess()) {
+                    return $invoiceId;
+                } else {
+                    $errors = $publishResponse->getErrors();
+                    throw new \Exception('Failed to publish invoice: ' . json_encode($errors));
+                }
             } else {
                 $errors = $api_response->getErrors();
+                throw new \Exception('Failed to create invoice: ' . json_encode($errors));
             }
-
-           
         } catch (ApiException $e) {
             return $this->handleApiException($e);
         }
@@ -253,5 +260,15 @@ class SquarePaymentService
         }
 
         return json_decode($payload, true);
+    }
+
+    // Add this new method to publish the invoice
+    private function publishInvoice($invoiceId)
+    {
+        $body = new \Square\Models\PublishInvoiceRequest();
+        $body->setVersion(1);
+        $body->setIdempotencyKey(uniqid());
+
+        return $this->client->getInvoicesApi()->publishInvoice($invoiceId, $body);
     }
 }
