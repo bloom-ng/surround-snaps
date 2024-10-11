@@ -134,9 +134,10 @@ class SquarePaymentService
             if ($api_response->isSuccess()) {
                 $result = $api_response->getResult();
                 $invoiceId = $result->getInvoice()->getId();
+                $invoiceVersion = $result->getInvoice()->getVersion();
                 
                 // Publish the invoice
-                $publishResponse = $this->publishInvoice($invoiceId);
+                $publishResponse = $this->publishInvoice($invoiceId, $invoiceVersion);
                 
                 if ($publishResponse->isSuccess()) {
                     return $invoiceId;
@@ -268,10 +269,9 @@ class SquarePaymentService
     }
 
     // Add this new method to publish the invoice
-    private function publishInvoice($invoiceId)
+    private function publishInvoice($invoiceId, $version = 0)
     {
-        $body = new \Square\Models\PublishInvoiceRequest();
-        $body->setVersion(1);
+        $body = new \Square\Models\PublishInvoiceRequest($version);
         $body->setIdempotencyKey(uniqid());
 
         return $this->client->getInvoicesApi()->publishInvoice($invoiceId, $body);
