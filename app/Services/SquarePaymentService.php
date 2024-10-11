@@ -118,7 +118,11 @@ class SquarePaymentService
             $invoice->setPrimaryRecipient($primary_recipient);
             $invoice->setPaymentRequests($payment_requests);
             $invoice->setDeliveryMethod('EMAIL');
-            $invoice->setScheduledAt(date('Y-m-d\TH:i:s.v\Z'));
+            
+            // Schedule the invoice for one hour from now
+            $oneHourFromNow = new \DateTime('+1 hour');
+            $invoice->setScheduledAt($oneHourFromNow->format('Y-m-d\TH:i:s.v\Z'));
+            
             $invoice->setAcceptedPaymentMethods($accepted_payment_methods);
 
             $body = new \Square\Models\CreateInvoiceRequest($invoice);
