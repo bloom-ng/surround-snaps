@@ -12,8 +12,10 @@ class BookingController extends Controller
 {
     public function index()
     {
+
         return view('surround.booking', [
-            'packageCost' => Booking::getPackageCost(),
+            'packageCost'   => Booking::getPackageCost(),
+            'popupMessage'  => Booking::getBookingPopupMessage()
         ]);
     }
 

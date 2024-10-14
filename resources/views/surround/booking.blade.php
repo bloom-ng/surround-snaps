@@ -2,6 +2,12 @@
 
 @section('title', 'Booking')
 
+@section('additional_head')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+
+@endsection
+
 
 
 @section('content')
@@ -492,6 +498,15 @@
         @endsection
 
         @section('additional_scripts')
+            <script>
+                Swal.fire({
+                    // title: "Notice!",
+                    html: "{!!$popupMessage!!}",
+                    icon: "info",
+                    confirmButtonColor: "#F4845F",
+                    confirmButtonText: "Proceed",
+                });
+            </script>
             <script src="/js/step.js"></script>
             <script src="/js/checkbox.js"></script>
             <script src="/js/booking.js"></script>

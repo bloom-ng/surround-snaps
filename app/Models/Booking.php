@@ -91,6 +91,13 @@ class Booking extends Model
         return static::$costPerHour;
     }
 
+    public static function getBookingPopupMessage()
+    {
+        $line_one = "<p>A non-refundable $100 deposit is required to confirm booking. Balance is due 5-days to the event.</p>";
+        $line_two = "<p>An added cost of $200/hour will be charged for every hour past the stipulated event time agreed per your contract.</p>";
+        return $line_one . "</br>" . $line_two;
+    }
+
     public static function conflictingBookings($eventDate, $eventStartTime, $durationHours)
     {
         $eventStart = Carbon::parse($eventDate . ' ' . $eventStartTime);
