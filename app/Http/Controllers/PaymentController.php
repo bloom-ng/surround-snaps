@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Services\SquarePaymentService;
 use App\Models\Booking;
 use App\Models\Transaction;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BookingConfirmed;
 
 class PaymentController extends Controller
 {
@@ -23,7 +25,7 @@ class PaymentController extends Controller
             }
 
             \Log::info('Transaction details:', [
-                'booking_id' => $booking->id, 
+                'booking_id' => $booking->id,
                 'square_customer_id' => $bookingFeeTransaction->square_customer_id
             ]);
 
@@ -56,6 +58,12 @@ class PaymentController extends Controller
                 'status' => Transaction::STATUS_PENDING,
                 'type' => Transaction::TYPE_FULL_PAYMENT,
             ]);
+
+            try {
+                Mail::to($booking->email)->send(new BookingConfirmed($booking));
+            } catch (\Throwable $th) {
+                \Log::error('Failed to send booking confirmed email: ' . $th->getMessage());
+            }
 
             // Redirect to thank you page with success message
             return redirect()->route('payment.thank-you')->with([

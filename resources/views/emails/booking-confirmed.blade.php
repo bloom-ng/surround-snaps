@@ -19,19 +19,7 @@
            </o:OfficeDocumentSettings>
          </xml>
       </noscript>
-<![endif]--><!--[if mso]>
- <style type="text/css">
-   ul {
-  margin: 0 !important;
-}
-ol {
-  margin: 0 !important;
-}
-li {
-  margin-left: 47px !important;
-}
- </style><![endif]
--->
+<![endif]-->
   <style type="text/css">
 .rollover:hover .rollover-first {
   max-height:0px!important;
@@ -124,12 +112,7 @@ a[x-apple-data-detectors],
                       <td align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><h3 class="es-m-txt-l" style="Margin:0;font-family:arial, 'helvetica neue', helvetica, sans-serif;mso-line-height-rule:exactly;letter-spacing:0;font-size:20px;font-style:normal;font-weight:bold;line-height:24px;color:#333333">Dear {{$name}}</h3></td>
                      </tr>
                      <tr>
-                      <td align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Thank you for booking with Surroundsnaps! We’re thrilled to be part of your special event and can’t wait to create unforgettable moments with our 360 Photo Booth experience.</p><br><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px"><b>What happens next?</b></p><br>
-                       <ol style="font-family:arial, 'helvetica neue', helvetica, sans-serif;padding:0px 0px 0px 40px;margin:15px 0px">
-                        <li style="color:#333333;margin:0px 0px 15px;font-size:14px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px;mso-margin-top-alt:15px">We will reach out shortly to gather details for your custom video overlay and song choice, ensuring your event reflects your unique style.</p></li>
-                        <li style="color:#333333;margin:0px 0px 15px;font-size:14px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">You’ll receive a reminder closer to the event date with any final details.</p></li>
-                        <li style="color:#333333;margin:0px 0px 15px;font-size:14px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px;mso-margin-bottom-alt:15px">Our team will arrive early on the day of the event to set up and ensure everything runs smoothly.</p></li>
-                       </ol><br><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">If you have any questions or need to make any adjustments, feel free to contact us at 7705605720 or surroundssnaps@gmail.com.</p><br><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">We’re excited to be a part of your event!</p><br><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Warm regards,</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">The Surroundsnaps Team</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">www.surroundsnaps.com</p><br><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px"><br><br></p></td>
+                      <td align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Thank you for choosing Surroundsnaps! Your booking is confirmed, and we’re excited to help capture amazing memories at your event.<br><br>Please find the attached <a href="{{$contractLink}}">contract</a> outlining our terms and conditions. Kindly review and sign.<br><br>We’ll be in touch soon to finalize the details for your custom video overlay and song choice.<br><br>Feel free to reach out with any questions or concerns!<br><br>Best regards,<br>The Surroundsnaps Team</p><br><br><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px"><br><br></p></td>
                      </tr>
                    </table></td>
                  </tr>
