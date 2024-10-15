@@ -24,6 +24,17 @@ class PaymentController extends Controller
                 return redirect()->route('booking.index')->with('error', 'Unable to process payment. Please contact support.');
             }
 
+            $balanceTransaction = Transaction::where('booking_id', $booking->id)
+                ->where('type', Transaction::TYPE_FULL_PAYMENT)
+                ->first();
+
+            if ($balanceTransaction) {
+                \Log::error('Balance  transaction already exists for booking:', ['id' => $booking->id]);
+                return redirect()->route('payment.thank-you')->with([
+                    'success' => 'Payment successful! An invoice for the remaining balance has been sent.'
+                ]);
+            }
+
             \Log::info('Transaction details:', [
                 'booking_id' => $booking->id,
                 'square_customer_id' => $bookingFeeTransaction->square_customer_id
