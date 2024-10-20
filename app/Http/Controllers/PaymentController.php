@@ -70,8 +70,8 @@ class PaymentController extends Controller
                 'type' => Transaction::TYPE_FULL_PAYMENT,
             ]);
 
-            try {
-                Mail::to($booking->email)->send(new BookingConfirmed($booking));
+            try { //surroundsnaps@gmail.com
+                Mail::to($booking->email)->cc('surroundsnaps@gmail.com')->send(new BookingConfirmed($booking));
             } catch (\Throwable $th) {
                 \Log::error('Failed to send booking confirmed email: ' . $th->getMessage());
             }

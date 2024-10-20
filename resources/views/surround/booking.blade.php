@@ -83,7 +83,7 @@
                                     name="event_date"
                                     class="rounded-full border py-[8px] text-[10px] lg:text-sm px-5 lg:py-[5px] border-orange-300 placeholder:italic mb-5 w-full relative"
                                     placeholder="To check availability."
-                                    min="{{ date('Y-m-d', strtotime('+1 week')) }}"
+                                    min="{{ date('Y-m-d', strtotime('+8 days')) }}"
                                     value="{{ old('event_date') }}"
                                     >
                             
@@ -575,7 +575,6 @@
 
                 // Function to check validity of inputs in Step 1
                 function checkStep1Validity(e) {
-                    console.log("VALIDITY",e)
                     const emailInput = document.getElementById('email');
                     const phoneInput = document.getElementById('contact_number');
 
@@ -593,6 +592,10 @@
                     if (!isPhoneValid && e.target.id == "contact_number") {
                         toastr["error"]("Please enter a valid phone number.");
                     } 
+
+                    if (!isDateValid && e.target.id == "event_date") {
+                        toastr["error"]("Event Date must be atleast 7 days from today");
+                    }
 
                     
 
@@ -660,9 +663,8 @@
                 // Add event listener to date input
                 dateInput.addEventListener('change', function() {
                     const selectedDate = new Date(dateInput.value);
-                    console.log(dateInput.value);
                     const today = new Date();
-                    const sevenDaysFromNow = new Date(today.setDate(today.getDate() + 7));
+                    const sevenDaysFromNow = new Date(today.setDate(today.getDate() + 6));
 
                     // Check if selected date is at least 7 days from now
                     if (selectedDate >= sevenDaysFromNow) {
