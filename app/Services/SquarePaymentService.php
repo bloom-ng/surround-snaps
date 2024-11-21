@@ -102,10 +102,30 @@ class SquarePaymentService
             $primary_recipient = new \Square\Models\InvoiceRecipient();
             $primary_recipient->setCustomerId($customerId);
 
+            
+            $invoice_payment_reminder = new \Square\Models\InvoicePaymentReminder();
+            $invoice_payment_reminder->setRelativeScheduledDays(-2);
+            $invoice_payment_reminder->setMessage('Surround Snaps Invoice is due soon');
+
+            $invoice_payment_reminder1 = new \Square\Models\InvoicePaymentReminder();
+            $invoice_payment_reminder1->setRelativeScheduledDays(0);
+            $invoice_payment_reminder1->setMessage('Surround Snaps Invoice is due');
+
+            $invoice_payment_reminder2 = new \Square\Models\InvoicePaymentReminder();
+            $invoice_payment_reminder2->setRelativeScheduledDays(2);
+            $invoice_payment_reminder2->setMessage('Surround Snaps Invoice is past due');
+
+            $reminders = [
+                $invoice_payment_reminder,
+                $invoice_payment_reminder1,
+                $invoice_payment_reminder2
+            ];
+
             $invoice_payment_request = new \Square\Models\InvoicePaymentRequest();
             $invoice_payment_request->setRequestType('BALANCE');
             $invoice_payment_request->setDueDate($orderDetails['dueDate']);
             $invoice_payment_request->setAutomaticPaymentSource('NONE');
+            $invoice_payment_request->setReminders($reminders);
 
             $payment_requests = [$invoice_payment_request];
             $accepted_payment_methods = new \Square\Models\InvoiceAcceptedPaymentMethods();
